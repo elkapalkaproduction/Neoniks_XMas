@@ -16,7 +16,7 @@
 #import "StatedObject.h"
 #import "NNKObjectParameters.h"
 
-@interface GameViewController () <GameChooseDelegate, GameLeftMenuDelegate, PopUpDelegate, HamDelegate, StatedObjectDelegate>
+@interface GameViewController () <GameChooseDelegate, GameLeftMenuDelegate, PopUpDelegate, HamDelegate, StatedObjectDelegate, UIDynamicAnimatorDelegate>
 
 @property (assign, nonatomic) GameCharacter selectedCharacter;
 @property (strong, nonatomic) PopUpViewController *popUpViewController;
@@ -25,6 +25,9 @@
 @property (strong, nonatomic) GameHamContainerViewController *ham;
 @property (strong, nonatomic) StatedObject *currentObject;
 @property (strong, nonatomic) NSMutableArray *allObjects;
+@property (nonatomic) UIDynamicAnimator *animator;
+@property (nonatomic, strong) NSTimer *checkingTimer;
+@property (nonatomic, strong) StatedObject *objectToRemove;
 
 @end
 
@@ -39,7 +42,7 @@
 }
 
 
-#pragma Actions
+#pragma mark - Actions
 
 - (void)openSite {
     NSURL *bookUrl = [NSURL urlForSite];
@@ -47,12 +50,24 @@
 }
 
 
+#pragma mark - Custom Accessors
+
 - (NSMutableArray *)allObjects {
     if (!_allObjects) {
         _allObjects = [[NSMutableArray alloc] init];
     }
     
     return _allObjects;
+}
+
+
+- (UIDynamicAnimator *)animator {
+    if (!_animator) {
+        _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+        _animator.delegate = self;
+    }
+    
+    return _animator;
 }
 
 
@@ -105,10 +120,14 @@
 
 
 - (void)startNewGame {
+    self.selectedCharacter = GameCharacterUnselected;
+    [self updateInterface];
     [self.ham hideViewWithCompletion:nil];
     [self cleanAllResources];
 }
 
+
+#pragma mark - Game Ham Delegate
 
 - (void)pressedToyWithID:(NSString *)toyID {
     if (self.currentObject) {
@@ -118,16 +137,28 @@
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfURL:[NSURL urlFromLocalizedName:@"toys" extension:@"plist"]];
     NNKObjectParameters *params = [[NNKObjectParameters alloc] initWithDictionary:dict[toyID]];
     self.currentObject = [[StatedObject alloc] initWithParameters:params delegate:self];
-
-    NSLog(@"toyID = %@", toyID);
 }
 
+
+#pragma mark - StatedObjectDelegate
 
 - (void)objectInteracted:(StatedObject *)object {
     if ([self.currentObject isEqual:object]) {
         [self.allObjects addObject:self.currentObject];
         self.currentObject = nil;
     }
+}
+
+
+- (void)fireSelector:(NSString *)stringSelector inObjectId:(NSObject *)objectId {
+}
+
+
+- (void)shouldRemoveObject:(StatedObject *)object {
+    self.objectToRemove = object;
+    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[object]];
+    [self.animator addBehavior:gravityBehavior];
+    self.checkingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(chechPos) userInfo:nil repeats:YES];
 }
 
 
@@ -215,6 +246,15 @@
     params.isInitialView = YES;
     PopUpViewController *popUp = [PopUpViewController instantiatePageNumber:params delegate:self];
     [StoryboardUtils addViewController:popUp onViewController:self];
+}
+
+
+- (void)chechPos {
+    if ([[self.animator itemsInRect:self.view.bounds] count] == 0) {
+        [self.checkingTimer invalidate];
+        [self.animator removeAllBehaviors];
+        [self.objectToRemove cleanResources];
+    }
 }
 
 @end

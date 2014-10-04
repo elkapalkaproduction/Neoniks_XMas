@@ -13,6 +13,7 @@
 @protocol StatedObjectDelegate <NSObject>
 
 - (void)objectInteracted:(StatedObject *)object;
+- (void)shouldRemoveObject:(StatedObject *)object;
 - (void)fireSelector:(NSString *)stringSelector inObjectId:(NSObject *)objectId;
 
 @end

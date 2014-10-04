@@ -89,12 +89,6 @@
 }
 
 
-- (void)executeCompletion:(void (^)(void))completion {
-   
-    completion();
-}
-
-
 - (void)toyPressed:(NNKShapedButton *)sender {
     NSInteger idx = [self.toys indexOfObject:sender];
     NSString *toyID = [self toyForCharacter:self.character imageNumber:idx];

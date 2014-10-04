@@ -437,7 +437,7 @@ extern NSString *const NNKRiseActionObjectId;
 
 - (void)performActions {
     if ([self shouldRemoveFromScreen:self.center]) {
-        [self cleanResources];
+        [self.delegate shouldRemoveObject:self];
         return;
     }
     [self parseActions:self.currentState.actions];
@@ -582,7 +582,7 @@ extern NSString *const NNKRiseActionObjectId;
     if (point.x > size.width - magicValue) {
         return YES;
     }
-    if (point.y > size.height - magicValue / 2) {
+    if (point.y > size.height - magicValue) {
         return YES;
     }
     

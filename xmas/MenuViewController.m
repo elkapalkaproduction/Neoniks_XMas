@@ -23,7 +23,6 @@
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
-    NSLog(@"%@", NSStringFromCGSize(CGSizeMake(672, 638 )));
     self.fonImage = @"menu";
     [super viewDidLoad];
     [self.languageButton addTarget:self onTouchUpInsideWithAction:@selector(changeLanguage)];

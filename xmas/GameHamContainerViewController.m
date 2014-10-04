@@ -15,7 +15,6 @@
 @property (assign, nonatomic) GameCharacter character;
 @property (weak, nonatomic) id<HamDelegate> delegate;
 @property (nonatomic) UIDynamicAnimator *animator;
-@property (nonatomic, copy) void (^completion)(void);
 @property (nonatomic, strong) NSTimer *checkingTimer;
 
 @end

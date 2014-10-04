@@ -23,12 +23,14 @@ typedef NS_ENUM(NSInteger, GameCharacter) {
 @protocol GameChooseDelegate <NSObject>
 
 - (void)selectCharacter:(GameCharacter)character;
-- (BOOL)isCharacterSelected:(GameCharacter)character;
+- (void)centralCharacterChanged:(GameCharacter)character;
 
 @end
 
 @interface GameChooseContainerViewController : UIViewController
 
 @property (weak, nonatomic) id<GameChooseDelegate> delegate;
+
+- (void)changeMainCharacter:(GameCharacter)character;
 
 @end

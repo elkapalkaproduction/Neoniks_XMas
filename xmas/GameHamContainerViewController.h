@@ -21,5 +21,6 @@
                             delegate:(id<HamDelegate>)delegate;
 
 - (void)hideViewWithCompletion:(void (^)(void))completion;
+@property (nonatomic, copy) void (^completion)(void);
 
 @end

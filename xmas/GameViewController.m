@@ -28,6 +28,7 @@
 @property (nonatomic) UIDynamicAnimator *animator;
 @property (nonatomic, strong) NSTimer *checkingTimer;
 @property (nonatomic, strong) StatedObject *objectToRemove;
+@property (nonatomic, strong) GameChooseContainerViewController *chooseContainer;
 
 @end
 
@@ -71,20 +72,38 @@
 }
 
 
-#pragma mark - GameChooseDelegate
-
-- (BOOL)isCharacterSelected:(GameCharacter)character {
-    return self.selectedCharacter == character;
+- (void)setSelectedCharacter:(GameCharacter)selectedCharacter {
+    if (selectedCharacter != _selectedCharacter) {
+        _selectedCharacter = selectedCharacter;
+        [self createHamWithCharacter:_selectedCharacter];
+    }
 }
 
 
-- (void)selectCharacter:(GameCharacter)character {
-    if ([self isCharacterSelected:character]) {
-        [self showPopUpWithCharacter:character];
-    } else {
-        [self createHamWithCharacter:character];
-        self.selectedCharacter = character;
+- (GameChooseContainerViewController *)chooseContainer {
+    if (_chooseContainer) {
+        return _chooseContainer;
     }
+    for (UIViewController *child in self.childViewControllers) {
+        if ([child isKindOfClass:[GameChooseContainerViewController class]]) {
+            _chooseContainer = (GameChooseContainerViewController *)child;
+        }
+    }
+    
+    return _chooseContainer;
+
+}
+
+
+#pragma mark - GameChooseDelegate
+
+- (void)selectCharacter:(GameCharacter)character {
+    [self showPopUpWithCharacter:character];
+}
+
+
+- (void)centralCharacterChanged:(GameCharacter)character {
+    self.selectedCharacter = character;
 }
 
 
@@ -120,9 +139,10 @@
 
 
 - (void)startNewGame {
-    self.selectedCharacter = GameCharacterUnselected;
     [self updateInterface];
-    [self.ham hideViewWithCompletion:nil];
+    [self.ham hideViewWithCompletion:^{
+        [self.chooseContainer changeMainCharacter:GameCharacterPhoebe];
+    }];
     [self cleanAllResources];
 }
 
@@ -172,13 +192,24 @@
         [StoryboardUtils addViewController:self.ham onViewController:self];
 
     } else {
-    [self.ham hideViewWithCompletion:^{
-        [self.ham.view removeFromSuperview];
-        self.ham = [GameHamContainerViewController instantiateWithWidth:0.4 * CGRectGetWidth(self.view.frame)
-                                                              character:character
-                                                               delegate:self];
-        [StoryboardUtils addViewController:self.ham onViewController:self];
-    }];
+        __weak GameViewController *weakSelf = self;
+        if (self.ham.completion) {
+            self.ham.completion = ^{
+                [weakSelf.ham.view removeFromSuperview];
+                weakSelf.ham = [GameHamContainerViewController instantiateWithWidth:0.4 * CGRectGetWidth(weakSelf.view.frame)
+                                                                      character:character
+                                                                       delegate:weakSelf];
+                [StoryboardUtils addViewController:weakSelf.ham onViewController:weakSelf];
+            };
+        } else {
+            [self.ham hideViewWithCompletion:^{
+                [weakSelf.ham.view removeFromSuperview];
+                weakSelf.ham = [GameHamContainerViewController instantiateWithWidth:0.4 * CGRectGetWidth(weakSelf.view.frame)
+                                                                          character:character
+                                                                           delegate:weakSelf];
+                [StoryboardUtils addViewController:self.ham onViewController:weakSelf];
+            }];
+        }
     }
 }
 

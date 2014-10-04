@@ -10,10 +10,10 @@
 
 @interface GameChooseContainerViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
-@property (weak, nonatomic) IBOutlet UIImageView *leftCharacterImage;
+@property (weak, nonatomic) IBOutlet UIButton *leftCharacterImage;
 @property (weak, nonatomic) IBOutlet UIButton *centerCharacterButton;
 @property (weak, nonatomic) IBOutlet UIImageView *centerCharacterName;
-@property (weak, nonatomic) IBOutlet UIImageView *rightCharacterImage;
+@property (weak, nonatomic) IBOutlet UIButton *rightCharacterImage;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
 
 @property (assign, nonatomic) GameCharacter currentMainCharacter;
@@ -25,16 +25,29 @@
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
-    self.currentMainCharacter = GameCharacterPhoebe;
     [super viewDidLoad];
     [self.leftButton addTarget:self onTouchUpInsideWithAction:@selector(loadPreviousCharacter)];
+    [self.leftCharacterImage addTarget:self onTouchUpInsideWithAction:@selector(loadPreviousCharacter)];
     [self.rightButton addTarget:self onTouchUpInsideWithAction:@selector(loadNextCharacter)];
+    [self.rightCharacterImage addTarget:self onTouchUpInsideWithAction:@selector(loadNextCharacter)];
     [self.centerCharacterButton addTarget:self onTouchUpInsideWithAction:@selector(selectCharacter)];
-    // Do any additional setup after loading the view.
+}
+
+
+- (void)setCurrentMainCharacter:(GameCharacter)currentMainCharacter {
+    _currentMainCharacter = currentMainCharacter;
+    [self.delegate centralCharacterChanged:currentMainCharacter];
 }
 
 
 #pragma mark - Actions
+
+
+- (void)changeMainCharacter:(GameCharacter)character {
+    self.currentMainCharacter = character;
+    [self updateInterface];
+}
+
 
 - (void)loadNextCharacter {
     self.currentMainCharacter = [self nextCharacter];
@@ -59,16 +72,14 @@
 #pragma mark - Private Methods
 
 - (void)updateInterface {
+    if (self.currentMainCharacter == GameCharacterUnselected) {
+        self.currentMainCharacter = GameCharacterPhoebe;
+    }
     self.leftCharacterImage.image = [UIImage imageWithLocalizedName:[self iconImageNameFromCharacter:[self previousCharacter]]];
     self.rightCharacterImage.image = [UIImage imageWithLocalizedName:[self iconImageNameFromCharacter:[self nextCharacter]]];
     self.centerCharacterButton.image = [UIImage imageWithLocalizedName:[self iconImageNameFromCharacter:self.currentMainCharacter]];
     NSInteger index = self.currentMainCharacter;
     self.centerCharacterName.image = [UIImage imageWithUnlocalizedName:[NSString stringWithFormat:@"game_choice_%ld", (long)index]];
-    if ([self.delegate respondsToSelector:@selector(isCharacterSelected:)]) {
-        if ([self.delegate isCharacterSelected:self.currentMainCharacter]) {
-            self.centerCharacterButton.image = [UIImage imageWithLocalizedName:@"game_choice_question"];
-        }
-    }
 }
 
 

@@ -37,11 +37,11 @@
     if (self.bannerImage) self.bannerImage.image = [UIImage bannerImageWithName:self.fonImage];
     if (self.textImage) self.textImage.image = [UIImage textImageWithName:self.fonImage];
     for (XMasBaseViewController *child in self.childViewControllers) {
-        if ([child respondsToSelector:@selector(updateInterface)]) {
-            [child updateInterface];
-        }
         if ([child respondsToSelector:@selector(setDelegate:)]) {
             child.delegate = self;
+        }
+        if ([child respondsToSelector:@selector(updateInterface)]) {
+            [child updateInterface];
         }
     }
 }

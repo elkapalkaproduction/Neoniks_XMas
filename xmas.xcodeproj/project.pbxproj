@@ -214,6 +214,7 @@
 		75B6779219D768F300E9275A /* MakeACardContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B6779119D768F300E9275A /* MakeACardContainerViewController.m */; };
 		75B6779419D77A1800E9275A /* blue_transparent_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 75B6779319D77A1800E9275A /* blue_transparent_background.png */; };
 		75B6779519D7813400E9275A /* CaptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B6775519D75E6A00E9275A /* CaptionsViewController.m */; };
+		75D6C21D19E1D0A1005FB177 /* toys_scalable.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */; };
 		75FFFAAC19D5DC3500CD310C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFFAAB19D5DC3500CD310C /* main.m */; };
 		75FFFAAF19D5DC3500CD310C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFFAAE19D5DC3500CD310C /* AppDelegate.m */; };
 		75FFFAB219D5DC3500CD310C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFFAB119D5DC3500CD310C /* MenuViewController.m */; };
@@ -496,6 +497,7 @@
 		75B6779019D768F300E9275A /* MakeACardContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeACardContainerViewController.h; sourceTree = "<group>"; };
 		75B6779119D768F300E9275A /* MakeACardContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeACardContainerViewController.m; sourceTree = "<group>"; };
 		75B6779319D77A1800E9275A /* blue_transparent_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_transparent_background.png; sourceTree = "<group>"; };
+		75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toys_scalable.plist; sourceTree = "<group>"; };
 		75FFFAA619D5DC3500CD310C /* xmas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFFAAA19D5DC3500CD310C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75FFFAAB19D5DC3500CD310C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -901,6 +903,7 @@
 				75A70D3E19DF14CB00ED47FE /* NNKObjectState.m */,
 				75A70D4019DF14DA00ED47FE /* NNKObjectAction.h */,
 				75A70D4119DF14DA00ED47FE /* NNKObjectAction.m */,
+				75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */,
 				75A70D7B19DF1D5F00ED47FE /* toys.plist */,
 				753704F119D82B68008FAB38 /* PopUp */,
 				75FFFAB319D5DC3500CD310C /* Main.storyboard */,
@@ -1268,6 +1271,7 @@
 				752B70B919DC991C00C649B7 /* toy_1_0.png in Resources */,
 				7537054519D82FD1008FAB38 /* 4_title_eng.png in Resources */,
 				7537054219D82FD1008FAB38 /* 2_title_rus.png in Resources */,
+				75D6C21D19E1D0A1005FB177 /* toys_scalable.plist in Resources */,
 				75A70D9719DF1D8200ED47FE /* game_toy_1_1.png in Resources */,
 				7537054F19D82FD1008FAB38 /* 2_popup_art.png in Resources */,
 				75B676C919D6C7F300E9275A /* about_button_feedback_icon.png in Resources */,

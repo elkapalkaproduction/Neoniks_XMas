@@ -16,6 +16,9 @@
 #import "StatedObject.h"
 #import "NNKObjectParameters.h"
 
+NSString *const pathToPlist = @"toys_scalable";
+//NSString *const pathToPlist = @"toys";
+
 @interface GameViewController () <GameChooseDelegate, GameLeftMenuDelegate, PopUpDelegate, HamDelegate, StatedObjectDelegate, UIDynamicAnimatorDelegate>
 
 @property (assign, nonatomic) GameCharacter selectedCharacter;
@@ -154,7 +157,7 @@
         [self.currentObject cleanResources];
     }
 
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfURL:[NSURL urlFromLocalizedName:@"toys" extension:@"plist"]];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfURL:[NSURL urlFromLocalizedName:pathToPlist extension:@"plist"]];
     NNKObjectParameters *params = [[NNKObjectParameters alloc] initWithDictionary:dict[toyID]];
     self.currentObject = [[StatedObject alloc] initWithParameters:params delegate:self];
 }

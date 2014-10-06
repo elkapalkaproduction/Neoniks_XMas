@@ -573,20 +573,7 @@ extern NSString *const NNKRiseActionObjectId;
 
 
 - (BOOL)shouldRemoveFromScreen:(CGPoint)point {
-    NSInteger magicValue = [DeviceUtils isIphone4] ? 50 : 100;
-    if (point.x < magicValue) {
-        return YES;
-    }
-    CGSize size = [DeviceUtils screenSize];
-    
-    if (point.x > size.width - magicValue) {
-        return YES;
-    }
-    if (point.y > size.height - magicValue) {
-        return YES;
-    }
-    
-    return NO;
+    return ![UIImage isAlphaVisibleAtPoint:point forImage:[UIImage backgroundImageWithName:@"tree"]];
 }
 
 

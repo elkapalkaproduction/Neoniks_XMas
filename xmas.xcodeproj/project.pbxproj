@@ -215,6 +215,9 @@
 		75B6779419D77A1800E9275A /* blue_transparent_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 75B6779319D77A1800E9275A /* blue_transparent_background.png */; };
 		75B6779519D7813400E9275A /* CaptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B6775519D75E6A00E9275A /* CaptionsViewController.m */; };
 		75D6C21D19E1D0A1005FB177 /* toys_scalable.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */; };
+		75F3E02119E3132C0083D9AB /* ipad_tree_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F3E01E19E3132C0083D9AB /* ipad_tree_fon.png */; };
+		75F3E02219E3132C0083D9AB /* iphone4_tree_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F3E01F19E3132C0083D9AB /* iphone4_tree_fon.png */; };
+		75F3E02319E3132C0083D9AB /* iphone6_tree_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F3E02019E3132C0083D9AB /* iphone6_tree_fon.png */; };
 		75FFFAAC19D5DC3500CD310C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFFAAB19D5DC3500CD310C /* main.m */; };
 		75FFFAAF19D5DC3500CD310C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFFAAE19D5DC3500CD310C /* AppDelegate.m */; };
 		75FFFAB219D5DC3500CD310C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FFFAB119D5DC3500CD310C /* MenuViewController.m */; };
@@ -498,6 +501,9 @@
 		75B6779119D768F300E9275A /* MakeACardContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeACardContainerViewController.m; sourceTree = "<group>"; };
 		75B6779319D77A1800E9275A /* blue_transparent_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_transparent_background.png; sourceTree = "<group>"; };
 		75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toys_scalable.plist; sourceTree = "<group>"; };
+		75F3E01E19E3132C0083D9AB /* ipad_tree_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipad_tree_fon.png; sourceTree = "<group>"; };
+		75F3E01F19E3132C0083D9AB /* iphone4_tree_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone4_tree_fon.png; sourceTree = "<group>"; };
+		75F3E02019E3132C0083D9AB /* iphone6_tree_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone6_tree_fon.png; sourceTree = "<group>"; };
 		75FFFAA619D5DC3500CD310C /* xmas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xmas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FFFAAA19D5DC3500CD310C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75FFFAAB19D5DC3500CD310C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1028,6 +1034,9 @@
 		75FFFB0419D5E90B00CD310C /* backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				75F3E01E19E3132C0083D9AB /* ipad_tree_fon.png */,
+				75F3E01F19E3132C0083D9AB /* iphone4_tree_fon.png */,
+				75F3E02019E3132C0083D9AB /* iphone6_tree_fon.png */,
 				753704FD19D82CBB008FAB38 /* ipad_pop_up_fon.png */,
 				753704FE19D82CBB008FAB38 /* iphone4_pop_up_fon.png */,
 				753704FF19D82CBB008FAB38 /* iphone6_pop_up_fon.png */,
@@ -1219,6 +1228,7 @@
 				75FFFB3519D6105A00CD310C /* menu_button_rate_us_icon.png in Resources */,
 				75B6774719D7585300E9275A /* iphone6_how_to_fon_rus.jpg in Resources */,
 				75A70D9C19DF1D8200ED47FE /* game_toy_3_0.png in Resources */,
+				75F3E02119E3132C0083D9AB /* ipad_tree_fon.png in Resources */,
 				75B6772819D73D4600E9275A /* game_choice_3_icon.png in Resources */,
 				75B6775C19D760C500E9275A /* iphone4_make_card_fon.png in Resources */,
 				7537055119D82FD1008FAB38 /* 4_popup_art.png in Resources */,
@@ -1295,6 +1305,8 @@
 				75B6772B19D73D4600E9275A /* game_choice_4_icon.png in Resources */,
 				75A70DA819DF1D8200ED47FE /* game_toy_7_0.png in Resources */,
 				75B6773519D73D4600E9275A /* game_choice_7_rus.png in Resources */,
+				75F3E02319E3132C0083D9AB /* iphone6_tree_fon.png in Resources */,
+				75F3E02219E3132C0083D9AB /* iphone4_tree_fon.png in Resources */,
 				7537055919D82FD1008FAB38 /* 0_text_eng.png in Resources */,
 				7537055D19D82FD1008FAB38 /* 2_text_eng.png in Resources */,
 				75A70D9D19DF1D8200ED47FE /* game_toy_3_1.png in Resources */,

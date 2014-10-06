@@ -17,5 +17,6 @@
 
 + (UIImage *)captureScreenInView:(UIView *)view;
 
++ (BOOL)isAlphaVisibleAtPoint:(CGPoint)point forImage:(UIImage *)image;
 
 @end

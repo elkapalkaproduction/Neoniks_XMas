@@ -46,6 +46,12 @@ NSString *const pathToPlist = @"toys_scalable";
 }
 
 
+- (void)updateInterface {
+    [super updateInterface];
+    self.siteButton.image = [UIImage imageWithUnlocalizedName:@"site"];
+}
+
+
 #pragma mark - Actions
 
 - (void)openSite {

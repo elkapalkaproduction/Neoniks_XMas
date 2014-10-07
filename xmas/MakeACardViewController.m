@@ -57,7 +57,7 @@
     CaptionsViewController *captions = [CaptionsViewController instantiateWithDelegate:self];
     captions.view.bounds = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     captions.view.frame = captions.view.bounds;
-    [StoryboardUtils addViewController:captions onViewController:self];
+    [StoryboardUtils addViewController:captions onViewController:self belowSubview:nil];
 }
 
 

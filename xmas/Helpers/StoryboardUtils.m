@@ -26,11 +26,15 @@
 }
 
 
-+ (void)addViewController:(UIViewController *)childView onViewController:(UIViewController *)parentView {
++ (void)addViewController:(UIViewController *)childView onViewController:(UIViewController *)parentView belowSubview:(UIView *)subview {
     [childView willMoveToParentViewController:parentView];
     [parentView addChildViewController:childView];
     [childView didMoveToParentViewController:parentView];
-    [parentView.view addSubview:childView.view];
+    if (subview) {
+        [parentView.view insertSubview:childView.view belowSubview:subview];
+    } else {
+        [parentView.view addSubview:childView.view];
+    }
 }
 
 @end

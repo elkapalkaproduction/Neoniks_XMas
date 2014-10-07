@@ -15,6 +15,6 @@
 
 + (UIStoryboard *)storyboard;
 
-+ (void)addViewController:(UIViewController *)childView onViewController:(UIViewController *)parentView;
++ (void)addViewController:(UIViewController *)childView onViewController:(UIViewController *)parentView belowSubview:(UIView *)subview;
 
 @end

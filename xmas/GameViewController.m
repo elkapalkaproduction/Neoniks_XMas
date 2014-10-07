@@ -42,6 +42,7 @@ NSString *const pathToPlist = @"toys_scalable";
 - (void)viewDidLoad {
     self.fonImage = @"game";
     [super viewDidLoad];
+    [self.view bringSubviewToFront:self.shadowView];
     [self.siteButton addTarget:self onTouchUpInsideWithAction:@selector(openSite)];
 }
 
@@ -198,7 +199,7 @@ NSString *const pathToPlist = @"toys_scalable";
         self.ham = [GameHamContainerViewController instantiateWithWidth:0.4 * CGRectGetWidth(self.view.frame)
                                                               character:character
                                                                delegate:self];
-        [StoryboardUtils addViewController:self.ham onViewController:self];
+        [StoryboardUtils addViewController:self.ham onViewController:self belowSubview:nil];
 
     } else {
         __weak GameViewController *weakSelf = self;
@@ -208,7 +209,7 @@ NSString *const pathToPlist = @"toys_scalable";
                 weakSelf.ham = [GameHamContainerViewController instantiateWithWidth:0.4 * CGRectGetWidth(weakSelf.view.frame)
                                                                       character:character
                                                                        delegate:weakSelf];
-                [StoryboardUtils addViewController:weakSelf.ham onViewController:weakSelf];
+                [StoryboardUtils addViewController:weakSelf.ham onViewController:weakSelf belowSubview:weakSelf.shadowView];
             };
         } else {
             [self.ham hideViewWithCompletion:^{
@@ -216,7 +217,7 @@ NSString *const pathToPlist = @"toys_scalable";
                 weakSelf.ham = [GameHamContainerViewController instantiateWithWidth:0.4 * CGRectGetWidth(weakSelf.view.frame)
                                                                           character:character
                                                                            delegate:weakSelf];
-                [StoryboardUtils addViewController:self.ham onViewController:weakSelf];
+                [StoryboardUtils addViewController:self.ham onViewController:weakSelf belowSubview:weakSelf.shadowView];
             }];
         }
     }
@@ -284,12 +285,12 @@ NSString *const pathToPlist = @"toys_scalable";
     params.fromRightToLeft = NO;
     params.curentPage = character - 1;
     params.isInitialView = YES;
-    PopUpViewController *popUp = [PopUpViewController instantiatePageNumber:params delegate:self];
-    [StoryboardUtils addViewController:popUp onViewController:self];
+    self.popUpViewController = [PopUpViewController instantiatePageNumber:params delegate:self];
+    [StoryboardUtils addViewController:self.popUpViewController onViewController:self belowSubview:nil];
 }
 
 
-- (void)chechPos {
+- (void)checkPos {
     if ([[self.animator itemsInRect:self.view.bounds] count] == 0) {
         [self.checkingTimer invalidate];
         [self.animator removeAllBehaviors];

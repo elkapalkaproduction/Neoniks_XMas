@@ -17,5 +17,6 @@
 
 @interface PopUpViewController : XMasBaseViewController
 + (id)instantiatePageNumber:(PopUpParameters *)param delegate:(id<PopUpDelegate>)aDeletegate;
+@property (assign, nonatomic, readonly) NSInteger curentPage;
 
 @end

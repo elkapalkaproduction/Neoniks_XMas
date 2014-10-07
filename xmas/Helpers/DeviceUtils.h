@@ -12,4 +12,6 @@
 + (BOOL)isIphone;
 + (CGSize)screenSize;
 
++ (NSString *)deviceName;
+
 @end

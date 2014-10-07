@@ -6,7 +6,10 @@
 //  Copyright (c) 2014 Andrei Vidrasco. All rights reserved.
 //
 
-@interface XMasBaseViewController : UIViewController
+#import "GAITrackedViewController.h"
+
+
+@interface XMasBaseViewController : GAITrackedViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerImage;

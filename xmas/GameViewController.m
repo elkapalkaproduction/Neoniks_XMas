@@ -15,6 +15,7 @@
 #import "GameHamContainerViewController.h"
 #import "StatedObject.h"
 #import "NNKObjectParameters.h"
+#import "XMasGoogleAnalitycs.h"
 
 NSString *const pathToPlist = @"toys_scalable";
 //NSString *const pathToPlist = @"toys";
@@ -56,6 +57,7 @@ NSString *const pathToPlist = @"toys_scalable";
 #pragma mark - Actions
 
 - (void)openSite {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:nil];
     NSURL *bookUrl = [NSURL urlForSite];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }
@@ -120,12 +122,15 @@ NSString *const pathToPlist = @"toys_scalable";
 #pragma mark - PopUpDelegate
 
 - (void)close {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayPopupClosed label:[LanguageUtils currentValue] value:@(self.popUpViewController.curentPage + 1)];
+
     [self closeWithShadow:YES];
 }
 
 
 
 - (void)showPage:(NSInteger)pageToShow isPrev:(BOOL)prev {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayArrowPopupClick label:[LanguageUtils currentValue] value:@(pageToShow + 1)];
     [self closeWithShadow:NO];
     PopUpParameters *param = [[PopUpParameters alloc] init];
     param.isInitialView = NO;
@@ -188,7 +193,7 @@ NSString *const pathToPlist = @"toys_scalable";
     self.objectToRemove = object;
     UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[object]];
     [self.animator addBehavior:gravityBehavior];
-    self.checkingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(chechPos) userInfo:nil repeats:YES];
+    self.checkingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(checkPos) userInfo:nil repeats:YES];
 }
 
 

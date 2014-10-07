@@ -7,6 +7,7 @@
 //
 
 #import "GameLeftContainerViewController.h"
+#import "XMasGoogleAnalitycs.h"
 
 @interface GameLeftContainerViewController ()
 
@@ -36,16 +37,19 @@
 #pragma mark - Actions
 
 - (void)goBack {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReturnMenu label:nil value:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 - (void)startNewGame {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayNewGame label:nil value:nil];
     [self.delegate startNewGame];
 }
 
 
 - (void)takeSnapshot {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayTakeSnapshot label:nil value:nil];
     [self.delegate takeSnapshot];
 }
 

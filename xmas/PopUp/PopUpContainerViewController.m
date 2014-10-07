@@ -7,6 +7,8 @@
 //
 
 #import "PopUpContainerViewController.h"
+#import "XMasGoogleAnalitycs.h"
+#import "PopUpViewController.h"
 
 @interface PopUpContainerViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *readBookIcon;
@@ -29,6 +31,8 @@
 
 
 - (void)readTheBook {
+    NSInteger pageToShow =  ((PopUpViewController *)self.parentViewController).curentPage;
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReadBook label:[DeviceUtils deviceName] value:@(pageToShow + 1)];
     NSURL *bookAppUrl = [NSURL URLWithString:NeoniksBookLink];
     if ([[UIApplication sharedApplication] canOpenURL:bookAppUrl]) {
         [[UIApplication sharedApplication] openURL:bookAppUrl];

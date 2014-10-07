@@ -18,4 +18,6 @@
 
 + (void)setOpositeLanguage;
 
++ (NSString *)currentValue;
+
 @end

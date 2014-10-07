@@ -43,4 +43,9 @@
     }
 }
 
+
++ (NSString *)deviceName {
+    return [DeviceUtils isIphone] ? @"iPhone" : @"iPad";
+}
+
 @end

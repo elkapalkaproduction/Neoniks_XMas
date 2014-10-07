@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "GameViewController.h"
+#import "XMasGoogleAnalitycs.h"
 
 @interface MenuViewController ()
 
@@ -26,8 +27,8 @@
     self.fonImage = @"menu";
     [super viewDidLoad];
     [self.languageButton addTarget:self onTouchUpInsideWithAction:@selector(changeLanguage)];
-    [self.playButton addTarget:self onTouchUpInsideWithAction:@selector(play)];
-    [self.playIcon addTarget:self onTouchUpInsideWithAction:@selector(play)];
+    [self.playButton addTarget:self onTouchUpInsideWithAction:@selector(didTapPlayButton)];
+    [self.playIcon addTarget:self onTouchUpInsideWithAction:@selector(didTapPlayIcon)];
     [self.siteButton addTarget:self onTouchUpInsideWithAction:@selector(openSite)];
 }
 
@@ -35,6 +36,10 @@
 
 - (void)changeLanguage {
     [LanguageUtils setOpositeLanguage];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage
+                                                       action:GAnalitycsMainPageLanguageChanged
+                                                        label:[LanguageUtils currentValue]
+                                                        value:nil];
     [self updateInterface];
 }
 
@@ -44,7 +49,20 @@
 }
 
 
+- (void)didTapPlayButton {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPagePlayClicked label:nil value:nil];
+    [self play];
+}
+
+
+- (void)didTapPlayIcon {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageArrowPlay label:nil value:nil];
+    [self play];
+}
+
+
 - (void)openSite {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:nil];
     NSURL *bookUrl = [NSURL urlForSite];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }

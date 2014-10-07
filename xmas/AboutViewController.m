@@ -7,6 +7,7 @@
 //
 
 #import "AboutViewController.h"
+#import "XMasGoogleAnalitycs.h"
 
 @interface AboutViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *contributorsText;
@@ -28,6 +29,7 @@
 #pragma Actions
 
 - (void)openSite {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:nil];
     NSURL *bookUrl = [NSURL urlForSite];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }

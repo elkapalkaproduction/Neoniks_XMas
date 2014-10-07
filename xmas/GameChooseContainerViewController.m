@@ -7,6 +7,7 @@
 //
 
 #import "GameChooseContainerViewController.h"
+#import "XMasGoogleAnalitycs.h"
 
 @interface GameChooseContainerViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
@@ -26,10 +27,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.leftButton addTarget:self onTouchUpInsideWithAction:@selector(loadPreviousCharacter)];
-    [self.leftCharacterImage addTarget:self onTouchUpInsideWithAction:@selector(loadPreviousCharacter)];
-    [self.rightButton addTarget:self onTouchUpInsideWithAction:@selector(loadNextCharacter)];
-    [self.rightCharacterImage addTarget:self onTouchUpInsideWithAction:@selector(loadNextCharacter)];
+    [self.leftButton addTarget:self onTouchUpInsideWithAction:@selector(loadPreviousCharacterByArrow)];
+    [self.leftCharacterImage addTarget:self onTouchUpInsideWithAction:@selector(loadPreviousCharacterByCharacter)];
+    [self.rightButton addTarget:self onTouchUpInsideWithAction:@selector(loadNextCharacterByArrow)];
+    [self.rightCharacterImage addTarget:self onTouchUpInsideWithAction:@selector(loadNextCharacterByCharacter)];
     [self.centerCharacterButton addTarget:self onTouchUpInsideWithAction:@selector(selectCharacter)];
 }
 
@@ -49,9 +50,33 @@
 }
 
 
+- (void)loadNextCharacterByArrow {
+    [self loadNextCharacter];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByArrow label:@"arrow next" value:@(self.currentMainCharacter)];
+}
+
+
+- (void)loadNextCharacterByCharacter {
+    [self loadNextCharacter];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByClick label:@"next click" value:@(self.currentMainCharacter)];
+}
+
+
 - (void)loadNextCharacter {
     self.currentMainCharacter = [self nextCharacter];
     [self updateInterface];
+}
+
+
+- (void)loadPreviousCharacterByArrow {
+    [self loadPreviousCharacter];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByArrow label:@"arrow previous" value:@(self.currentMainCharacter)];
+}
+
+
+- (void)loadPreviousCharacterByCharacter {
+    [self loadPreviousCharacter];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByClick label:@"previous click" value:@(self.currentMainCharacter)];
 }
 
 
@@ -62,6 +87,8 @@
 
 
 - (void)selectCharacter {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayPopupAppeared label:[LanguageUtils currentValue] value:@(self.currentMainCharacter)];
+
     if ([self.delegate respondsToSelector:@selector(selectCharacter:)]) {
         [self.delegate selectCharacter:self.currentMainCharacter];
     }

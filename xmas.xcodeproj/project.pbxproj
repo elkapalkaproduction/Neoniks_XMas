@@ -97,6 +97,11 @@
 		7537056619D82FD1008FAB38 /* 6_text_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7537053119D82FD1008FAB38 /* 6_text_rus.png */; };
 		7537056719D82FD1008FAB38 /* 7_text_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = 7537053219D82FD1008FAB38 /* 7_text_eng.png */; };
 		7537056819D82FD1008FAB38 /* 7_text_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7537053319D82FD1008FAB38 /* 7_text_rus.png */; };
+		754F2C1819E47672008EA274 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 754F2C1719E47672008EA274 /* libGoogleAnalyticsServices.a */; };
+		754F2C1C19E476AA008EA274 /* XMasGoogleAnalitycs.m in Sources */ = {isa = PBXBuildFile; fileRef = 754F2C1B19E476AA008EA274 /* XMasGoogleAnalitycs.m */; };
+		754F2C1E19E47EDA008EA274 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754F2C1D19E47EDA008EA274 /* CoreData.framework */; };
+		754F2C2019E47F0F008EA274 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 754F2C1F19E47F0F008EA274 /* libz.dylib */; };
+		754F2C2419E47F4B008EA274 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754F2C2319E47F4B008EA274 /* SystemConfiguration.framework */; };
 		757B3D1619DDCFDC00D95ED5 /* NNKShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B3D1519DDCFDC00D95ED5 /* NNKShapedButton.m */; };
 		757B3D1919DDD0EA00D95ED5 /* GameHamContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 757B3D1819DDD0EA00D95ED5 /* GameHamContainerViewController.m */; };
 		75A70D3719DF147100ED47FE /* StatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A70D3619DF147100ED47FE /* StatedObject.m */; };
@@ -377,6 +382,23 @@
 		7537053119D82FD1008FAB38 /* 6_text_rus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6_text_rus.png; sourceTree = "<group>"; };
 		7537053219D82FD1008FAB38 /* 7_text_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_text_eng.png; sourceTree = "<group>"; };
 		7537053319D82FD1008FAB38 /* 7_text_rus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_text_rus.png; sourceTree = "<group>"; };
+		754F2C0D19E47672008EA274 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		754F2C0E19E47672008EA274 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		754F2C0F19E47672008EA274 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		754F2C1019E47672008EA274 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		754F2C1119E47672008EA274 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		754F2C1219E47672008EA274 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		754F2C1319E47672008EA274 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		754F2C1419E47672008EA274 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		754F2C1519E47672008EA274 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		754F2C1619E47672008EA274 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		754F2C1719E47672008EA274 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		754F2C1A19E476AA008EA274 /* XMasGoogleAnalitycs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMasGoogleAnalitycs.h; sourceTree = "<group>"; };
+		754F2C1B19E476AA008EA274 /* XMasGoogleAnalitycs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMasGoogleAnalitycs.m; sourceTree = "<group>"; };
+		754F2C1D19E47EDA008EA274 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		754F2C1F19E47F0F008EA274 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		754F2C2119E47F1F008EA274 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		754F2C2319E47F4B008EA274 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		757B3D1419DDCFDC00D95ED5 /* NNKShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNKShapedButton.h; sourceTree = "<group>"; };
 		757B3D1519DDCFDC00D95ED5 /* NNKShapedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNKShapedButton.m; sourceTree = "<group>"; };
 		757B3D1719DDD0EA00D95ED5 /* GameHamContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameHamContainerViewController.h; sourceTree = "<group>"; };
@@ -593,9 +615,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754F2C2419E47F4B008EA274 /* SystemConfiguration.framework in Frameworks */,
+				754F2C2019E47F0F008EA274 /* libz.dylib in Frameworks */,
+				754F2C1E19E47EDA008EA274 /* CoreData.framework in Frameworks */,
 				75FFFAE619D5E34A00CD310C /* Foundation.framework in Frameworks */,
 				75FFFAE419D5E33F00CD310C /* CoreGraphics.framework in Frameworks */,
 				75FFFAE219D5E33200CD310C /* UIKit.framework in Frameworks */,
+				754F2C1819E47672008EA274 /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +779,24 @@
 				7537053319D82FD1008FAB38 /* 7_text_rus.png */,
 			);
 			path = texts;
+			sourceTree = "<group>";
+		};
+		754F2C0C19E47672008EA274 /* GoogleAnalitycs */ = {
+			isa = PBXGroup;
+			children = (
+				754F2C0D19E47672008EA274 /* GAI.h */,
+				754F2C0E19E47672008EA274 /* GAIDictionaryBuilder.h */,
+				754F2C0F19E47672008EA274 /* GAIEcommerceFields.h */,
+				754F2C1019E47672008EA274 /* GAIEcommerceProduct.h */,
+				754F2C1119E47672008EA274 /* GAIEcommerceProductAction.h */,
+				754F2C1219E47672008EA274 /* GAIEcommercePromotion.h */,
+				754F2C1319E47672008EA274 /* GAIFields.h */,
+				754F2C1419E47672008EA274 /* GAILogger.h */,
+				754F2C1519E47672008EA274 /* GAITrackedViewController.h */,
+				754F2C1619E47672008EA274 /* GAITracker.h */,
+				754F2C1719E47672008EA274 /* libGoogleAnalyticsServices.a */,
+			);
+			path = GoogleAnalitycs;
 			sourceTree = "<group>";
 		};
 		75A70D7D19DF1D8200ED47FE /* game_toys */ = {
@@ -955,8 +999,11 @@
 				75A70D3E19DF14CB00ED47FE /* NNKObjectState.m */,
 				75A70D4019DF14DA00ED47FE /* NNKObjectAction.h */,
 				75A70D4119DF14DA00ED47FE /* NNKObjectAction.m */,
+				754F2C1A19E476AA008EA274 /* XMasGoogleAnalitycs.h */,
+				754F2C1B19E476AA008EA274 /* XMasGoogleAnalitycs.m */,
 				75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */,
 				75A70D7B19DF1D5F00ED47FE /* toys.plist */,
+				754F2C0C19E47672008EA274 /* GoogleAnalitycs */,
 				753704F119D82B68008FAB38 /* PopUp */,
 				75FFFAB319D5DC3500CD310C /* Main.storyboard */,
 				75FFFAB619D5DC3500CD310C /* Images.xcassets */,
@@ -1071,6 +1118,10 @@
 		75FFFAE719D5E34E00CD310C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				754F2C2319E47F4B008EA274 /* SystemConfiguration.framework */,
+				754F2C2119E47F1F008EA274 /* CFNetwork.framework */,
+				754F2C1F19E47F0F008EA274 /* libz.dylib */,
+				754F2C1D19E47EDA008EA274 /* CoreData.framework */,
 				75FFFAE519D5E34A00CD310C /* Foundation.framework */,
 				75FFFAE319D5E33F00CD310C /* CoreGraphics.framework */,
 				75FFFAE119D5E33200CD310C /* UIKit.framework */,
@@ -1464,6 +1515,7 @@
 				75B6779219D768F300E9275A /* MakeACardContainerViewController.m in Sources */,
 				757B3D1919DDD0EA00D95ED5 /* GameHamContainerViewController.m in Sources */,
 				753704F919D82B68008FAB38 /* PopUpParameters.m in Sources */,
+				754F2C1C19E476AA008EA274 /* XMasGoogleAnalitycs.m in Sources */,
 				75FFFAF519D5E71600CD310C /* StoryboardUtils.m in Sources */,
 				75B676AB19D6C4A600E9275A /* AboutViewController.m in Sources */,
 				75FFFAEE19D5E6E500CD310C /* UIButton+Helps.m in Sources */,
@@ -1595,6 +1647,10 @@
 				INFOPLIST_FILE = xmas/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/xmas/GoogleAnalitycs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c0d3c688-2f46-4302-809b-2ddbb43fd76f";
 			};
@@ -1612,6 +1668,10 @@
 				INFOPLIST_FILE = xmas/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/xmas/GoogleAnalitycs",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c0d3c688-2f46-4302-809b-2ddbb43fd76f";
 			};

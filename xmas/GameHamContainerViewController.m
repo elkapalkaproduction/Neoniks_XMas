@@ -8,6 +8,7 @@
 
 #import "GameHamContainerViewController.h"
 #import "NNKShapedButton.h"
+#import "XMasGoogleAnalitycs.h"
 
 @interface GameHamContainerViewController () <UIDynamicAnimatorDelegate>
 @property (strong, nonatomic) IBOutletCollection(NNKShapedButton) NSArray *toys;
@@ -91,6 +92,11 @@
 - (void)toyPressed:(NNKShapedButton *)sender {
     NSInteger idx = [self.toys indexOfObject:sender];
     NSString *toyID = [self toyForCharacter:self.character imageNumber:idx];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen
+                                                       action:GAnalitycsPlayXmasToy
+                                                        label:[NSString stringWithFormat:@"toy_%ld", (long)idx]
+                                                        value:@(self.character)];
+
     [self.delegate pressedToyWithID:toyID];
 }
 

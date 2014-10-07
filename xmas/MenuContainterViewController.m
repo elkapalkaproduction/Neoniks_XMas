@@ -9,6 +9,7 @@
 #import "MenuContainterViewController.h"
 #import "AboutViewController.h"
 #import "HowToViewController.h"
+#import "XMasGoogleAnalitycs.h"
 
 @interface MenuContainterViewController ()
 
@@ -39,16 +40,19 @@
 #pragma mark - Actions
 
 - (void)goToAbout {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageAboutUs label:nil value:nil];
     [StoryboardUtils presentViewControllerWithStoryboardID:[AboutViewController storyboardID] fromViewController:self];
 }
 
 
 - (void)goToHowTo {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageHowToPlay label:nil value:nil];
     [StoryboardUtils presentViewControllerWithStoryboardID:[HowToViewController storyboardID] fromViewController:self];
 }
 
 
 - (void)goToRateUs {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageRateUs label:nil value:nil];
     NSURL *bookUrl = [NSURL openStoreToAppWithID:bookAppID];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }

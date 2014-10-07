@@ -10,6 +10,7 @@
 #import "CaptionsViewController.h"
 #import "MakeACardContainerViewController.h"
 #import <MessageUI/MessageUI.h>
+#import "XMasGoogleAnalitycs.h"
 
 @interface MakeACardViewController () <MFMailComposeViewControllerDelegate, CaptionsDelegate, MakeACardDelegate>
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *textMessage;
 @property (strong, nonatomic) IBOutlet UIButton *siteAddress;
 @property (strong, nonatomic) IBOutlet UIView *cardView;
+@property (assign, nonatomic) NSInteger imageIndex;
 
 @end
 
@@ -54,6 +56,7 @@
 #pragma mark - MakeACardDelegate
 
 - (void)captions {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotCaption label:[LanguageUtils currentValue] value:@(self.imageIndex)];
     CaptionsViewController *captions = [CaptionsViewController instantiateWithDelegate:self];
     captions.view.bounds = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     captions.view.frame = captions.view.bounds;
@@ -62,6 +65,7 @@
 
 
 - (void)send {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotSend label:[LanguageUtils currentValue] value:@(self.imageIndex)];
     UIImage *image = [UIImage captureScreenInView:self.cardView];
     MFMailComposeViewController *mailCont = [self createMailFromImage:image];
     if (!mailCont) return;
@@ -70,6 +74,7 @@
 
 
 - (void)save {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotSave label:[LanguageUtils currentValue] value:@(self.imageIndex)];
     UIImage *image = [UIImage captureScreenInView:self.cardView];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     
@@ -79,6 +84,7 @@
 #pragma mark - CaptionsDelegate
 
 - (void)selectCaptionWithIndex:(NSInteger)index {
+    self.imageIndex = index;
     self.textMessage.image = [UIImage imageWithUnlocalizedName:[NSString stringWithFormat:@"card_caption_text%ld", (long)index]];
 }
 

@@ -23,7 +23,7 @@
 
 @property (weak, nonatomic) id <PopUpDelegate> delegate;
 @property (assign, nonatomic) BOOL fromRightToLeft;
-@property (assign, nonatomic) NSInteger curentPage;
+@property (assign, nonatomic, readwrite) NSInteger curentPage;
 @property (assign, nonatomic) BOOL isInitialView;
 @property (assign, nonatomic) NSInteger nextPage;
 @property (assign, nonatomic) NSInteger prevPage;

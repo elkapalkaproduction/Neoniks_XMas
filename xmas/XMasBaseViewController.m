@@ -7,6 +7,7 @@
 //
 
 #import "XMasBaseViewController.h"
+#import "XMasGoogleAnalitycs.h"
 
 @interface XMasBaseViewController ()
 @property (weak, nonatomic) id delegate;
@@ -20,6 +21,19 @@
     [super viewDidLoad];
     [self updateInterface];
     [self.backButton addTarget:self onTouchUpInsideWithAction:@selector(back)];
+    self.screenName = self.fonImage;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[XMasGoogleAnalitycs sharedManager] startLogTime:self.fonImage];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [[XMasGoogleAnalitycs sharedManager] endLogTime];
 }
 
 

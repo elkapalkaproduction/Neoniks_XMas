@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XMasGoogleAnalitycs.h"
 
 NSString *const xmasAppID = @"918984559";
 NSString *const bookAppID = @"899196882";
@@ -20,6 +21,7 @@ NSString *const bookAppID = @"899196882";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [LanguageUtils setupLanguage];
+    [XMasGoogleAnalitycs sharedManager];
     // Override point for customization after application launch.
     return YES;
 }

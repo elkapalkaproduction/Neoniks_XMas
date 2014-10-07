@@ -8,6 +8,7 @@
 
 #import "AboutContainerViewController.h"
 #import <MessageUI/MessageUI.h>
+#import "XMasGoogleAnalitycs.h"
 
 @interface AboutContainerViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *readBookButton;
@@ -33,6 +34,7 @@
 #pragma mark - Actions
 
 - (void)goToReadBook {
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:nil];
     NSURL *bookAppUrl = [NSURL URLWithString:NeoniksBookLink];
     if ([[UIApplication sharedApplication] canOpenURL:bookAppUrl]) {
         [[UIApplication sharedApplication] openURL:bookAppUrl];

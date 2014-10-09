@@ -9,6 +9,7 @@
 #import "GameHamContainerViewController.h"
 #import "NNKShapedButton.h"
 #import "XMasGoogleAnalitycs.h"
+#import "SoundPlayer.h"
 
 @interface GameHamContainerViewController () <UIDynamicAnimatorDelegate>
 @property (strong, nonatomic) IBOutletCollection(NNKShapedButton) NSArray *toys;
@@ -41,6 +42,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[SoundPlayer sharedPlayer] playSoundWithName:@"puff"];
     [self setupToys];
     [self adjustView];
     [self.view layoutIfNeeded];
@@ -105,7 +107,8 @@
     [self.toys enumerateObjectsUsingBlock:^(NNKShapedButton *toy, NSUInteger idx, BOOL *stop) {
         NSString *imageName = [self toyForCharacter:self.character imageNumber:idx];
         toy.image = [UIImage imageWithLocalizedName:imageName];
-        [toy addTarget:self onTouchUpInsideWithAction:@selector(toyPressed:)];
+        [toy addTarget:self action:@selector(toyPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [toy addTarget:[SoundPlayer sharedPlayer] action:@selector(playSoundWithName:) forControlEvents:UIControlEventTouchUpInside];
     }];
 }
 

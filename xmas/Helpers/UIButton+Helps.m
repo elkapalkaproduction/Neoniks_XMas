@@ -7,6 +7,7 @@
 //
 
 #import "UIButton+Helps.h"
+#import "SoundPlayer.h"
 
 @implementation UIButton (Helpers)
 
@@ -19,6 +20,7 @@
 
 - (void)addTarget:(id)target onTouchUpInsideWithAction:(SEL)action {
     [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [self addTarget:[SoundPlayer sharedPlayer] action:@selector(playClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

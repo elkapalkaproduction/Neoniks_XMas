@@ -9,6 +9,7 @@
 #import "MenuViewController.h"
 #import "GameViewController.h"
 #import "XMasGoogleAnalitycs.h"
+#import "SoundPlayer.h"
 
 @interface MenuViewController ()
 
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *playIcon;
 @property (weak, nonatomic) IBOutlet UIButton *siteButton;
+@property (weak, nonatomic) IBOutlet UIButton *musicNote;
+@property (assign, nonatomic) BOOL dontTurnOnSound;
 
 @end
 
@@ -30,9 +33,35 @@
     [self.playButton addTarget:self onTouchUpInsideWithAction:@selector(didTapPlayButton)];
     [self.playIcon addTarget:self onTouchUpInsideWithAction:@selector(didTapPlayIcon)];
     [self.siteButton addTarget:self onTouchUpInsideWithAction:@selector(openSite)];
+    [self.musicNote addTarget:self onTouchUpInsideWithAction:@selector(stopPlaySound)];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (!self.dontTurnOnSound) {
+        [[SoundPlayer sharedPlayer] playBakgroundMusic];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.dontTurnOnSound = ![[SoundPlayer sharedPlayer] isPlayingBackgroundMusic];
+    [[SoundPlayer sharedPlayer] pauseBackgroundMusic];
 }
 
 #pragma mark - Actions
+
+- (void)stopPlaySound {
+    if ([[SoundPlayer sharedPlayer] isPlayingBackgroundMusic]) {
+        self.musicNote.image = [UIImage imageNamed:@"note-x100"];
+        [[SoundPlayer sharedPlayer] pauseBackgroundMusic];
+    } else {
+        self.musicNote.image = [UIImage imageNamed:@"note-100"];
+        [[SoundPlayer sharedPlayer] playBakgroundMusic];
+    }
+}
+
 
 - (void)changeLanguage {
     [LanguageUtils setOpositeLanguage];

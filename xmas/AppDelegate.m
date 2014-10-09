@@ -8,11 +8,14 @@
 
 #import "AppDelegate.h"
 #import "XMasGoogleAnalitycs.h"
-
+#import "MenuViewController.h"
+#import "LogoViewController.h"
 NSString *const xmasAppID = @"918984559";
 NSString *const bookAppID = @"899196882";
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) MenuViewController *viewController;
 
 @end
 
@@ -22,6 +25,16 @@ NSString *const bookAppID = @"899196882";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [LanguageUtils setupLanguage];
     [XMasGoogleAnalitycs sharedManager];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    LogoViewController *logoViewController = [[LogoViewController alloc] initWithNibName:@"LogoViewController" bundle:nil];
+    self.viewController = [[StoryboardUtils storyboard] instantiateViewControllerWithIdentifier:[MenuViewController storyboardID]];
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    [self.navController pushViewController:logoViewController animated:NO];
+    [self.navController setNavigationBarHidden:YES];
+    self.window.rootViewController = self.navController;
+    [self.window makeKeyAndVisible];    // Override point for customization after application launch.
+
     // Override point for customization after application launch.
     return YES;
 }

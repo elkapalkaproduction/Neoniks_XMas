@@ -97,6 +97,18 @@
 		7537056619D82FD1008FAB38 /* 6_text_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7537053119D82FD1008FAB38 /* 6_text_rus.png */; };
 		7537056719D82FD1008FAB38 /* 7_text_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = 7537053219D82FD1008FAB38 /* 7_text_eng.png */; };
 		7537056819D82FD1008FAB38 /* 7_text_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7537053319D82FD1008FAB38 /* 7_text_rus.png */; };
+		7544F40C19E7109A0085CBD8 /* button_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7544F40719E7109A0085CBD8 /* button_click.mp3 */; };
+		7544F40D19E7109A0085CBD8 /* doll_falling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7544F40819E7109A0085CBD8 /* doll_falling.mp3 */; };
+		7544F40E19E7109A0085CBD8 /* puff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7544F40919E7109A0085CBD8 /* puff.mp3 */; };
+		7544F40F19E7109A0085CBD8 /* rmi_show.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7544F40A19E7109A0085CBD8 /* rmi_show.mp3 */; };
+		7544F41019E7109A0085CBD8 /* xmas_bells.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7544F40B19E7109A0085CBD8 /* xmas_bells.mp3 */; };
+		7544F41719E711860085CBD8 /* SoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7544F41619E711860085CBD8 /* SoundPlayer.m */; };
+		7544F41D19E7134E0085CBD8 /* LogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7544F41A19E7134E0085CBD8 /* LogoViewController.m */; };
+		7544F41E19E7134E0085CBD8 /* LogoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7544F41B19E7134E0085CBD8 /* LogoViewController.xib */; };
+		7544F42219E7138A0085CBD8 /* logo_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = 7544F42019E7138A0085CBD8 /* logo_eng.png */; };
+		7544F42319E7138A0085CBD8 /* logo_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7544F42119E7138A0085CBD8 /* logo_rus.png */; };
+		7544F42619E71AA00085CBD8 /* note-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 7544F42419E71AA00085CBD8 /* note-100.png */; };
+		7544F42719E71AA00085CBD8 /* note-x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 7544F42519E71AA00085CBD8 /* note-x100.png */; };
 		754F2C1819E47672008EA274 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 754F2C1719E47672008EA274 /* libGoogleAnalyticsServices.a */; };
 		754F2C1C19E476AA008EA274 /* XMasGoogleAnalitycs.m in Sources */ = {isa = PBXBuildFile; fileRef = 754F2C1B19E476AA008EA274 /* XMasGoogleAnalitycs.m */; };
 		754F2C1E19E47EDA008EA274 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754F2C1D19E47EDA008EA274 /* CoreData.framework */; };
@@ -382,6 +394,20 @@
 		7537053119D82FD1008FAB38 /* 6_text_rus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6_text_rus.png; sourceTree = "<group>"; };
 		7537053219D82FD1008FAB38 /* 7_text_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_text_eng.png; sourceTree = "<group>"; };
 		7537053319D82FD1008FAB38 /* 7_text_rus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_text_rus.png; sourceTree = "<group>"; };
+		7544F40719E7109A0085CBD8 /* button_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_click.mp3; sourceTree = "<group>"; };
+		7544F40819E7109A0085CBD8 /* doll_falling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doll_falling.mp3; sourceTree = "<group>"; };
+		7544F40919E7109A0085CBD8 /* puff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = puff.mp3; sourceTree = "<group>"; };
+		7544F40A19E7109A0085CBD8 /* rmi_show.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rmi_show.mp3; sourceTree = "<group>"; };
+		7544F40B19E7109A0085CBD8 /* xmas_bells.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = xmas_bells.mp3; sourceTree = "<group>"; };
+		7544F41519E711860085CBD8 /* SoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
+		7544F41619E711860085CBD8 /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayer.m; sourceTree = "<group>"; };
+		7544F41919E7134E0085CBD8 /* LogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoViewController.h; sourceTree = "<group>"; };
+		7544F41A19E7134E0085CBD8 /* LogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoViewController.m; sourceTree = "<group>"; };
+		7544F41B19E7134E0085CBD8 /* LogoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogoViewController.xib; sourceTree = "<group>"; };
+		7544F42019E7138A0085CBD8 /* logo_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_eng.png; sourceTree = "<group>"; };
+		7544F42119E7138A0085CBD8 /* logo_rus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_rus.png; sourceTree = "<group>"; };
+		7544F42419E71AA00085CBD8 /* note-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-100.png"; sourceTree = "<group>"; };
+		7544F42519E71AA00085CBD8 /* note-x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-x100.png"; sourceTree = "<group>"; };
 		754F2C0D19E47672008EA274 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		754F2C0E19E47672008EA274 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		754F2C0F19E47672008EA274 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
@@ -781,6 +807,30 @@
 			path = texts;
 			sourceTree = "<group>";
 		};
+		7544F40619E7109A0085CBD8 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7544F40719E7109A0085CBD8 /* button_click.mp3 */,
+				7544F40819E7109A0085CBD8 /* doll_falling.mp3 */,
+				7544F40919E7109A0085CBD8 /* puff.mp3 */,
+				7544F40A19E7109A0085CBD8 /* rmi_show.mp3 */,
+				7544F40B19E7109A0085CBD8 /* xmas_bells.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+		7544F41819E7134E0085CBD8 /* LogoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7544F41919E7134E0085CBD8 /* LogoViewController.h */,
+				7544F41A19E7134E0085CBD8 /* LogoViewController.m */,
+				7544F42019E7138A0085CBD8 /* logo_eng.png */,
+				7544F42119E7138A0085CBD8 /* logo_rus.png */,
+				7544F41B19E7134E0085CBD8 /* LogoViewController.xib */,
+			);
+			path = LogoViewController;
+			sourceTree = "<group>";
+		};
 		754F2C0C19E47672008EA274 /* GoogleAnalitycs */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,6 +1013,7 @@
 		75FFFAA819D5DC3500CD310C /* xmas */ = {
 			isa = PBXGroup;
 			children = (
+				7544F41819E7134E0085CBD8 /* LogoViewController */,
 				75FFFAAD19D5DC3500CD310C /* AppDelegate.h */,
 				75FFFAAE19D5DC3500CD310C /* AppDelegate.m */,
 				75B676AC19D6C57300E9275A /* XMasBaseViewController.h */,
@@ -1003,6 +1054,9 @@
 				754F2C1B19E476AA008EA274 /* XMasGoogleAnalitycs.m */,
 				75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */,
 				75A70D7B19DF1D5F00ED47FE /* toys.plist */,
+				7544F41519E711860085CBD8 /* SoundPlayer.h */,
+				7544F41619E711860085CBD8 /* SoundPlayer.m */,
+				7544F40619E7109A0085CBD8 /* sounds */,
 				754F2C0C19E47672008EA274 /* GoogleAnalitycs */,
 				753704F119D82B68008FAB38 /* PopUp */,
 				75FFFAB319D5DC3500CD310C /* Main.storyboard */,
@@ -1071,6 +1125,8 @@
 		75FFFAD319D5E29500CD310C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7544F42419E71AA00085CBD8 /* note-100.png */,
+				7544F42519E71AA00085CBD8 /* note-x100.png */,
 				457AF49B19E31A18006B3C6F /* icons */,
 				75A70D7D19DF1D8200ED47FE /* game_toys */,
 				752B709A19DC991C00C649B7 /* hammock_images */,
@@ -1280,6 +1336,7 @@
 				7537055019D82FD1008FAB38 /* 3_popup_art.png in Resources */,
 				75B6779419D77A1800E9275A /* blue_transparent_background.png in Resources */,
 				752B70C719DC991C00C649B7 /* toy_5_2.png in Resources */,
+				7544F40E19E7109A0085CBD8 /* puff.mp3 in Resources */,
 				752B70B719DC991C00C649B7 /* ham_shadow.png in Resources */,
 				752B70CE19DC991C00C649B7 /* toy_8_0.png in Resources */,
 				75A70D9919DF1D8200ED47FE /* game_toy_2_0.png in Resources */,
@@ -1294,13 +1351,17 @@
 				75B6773819D73D4600E9275A /* game_choice_button_right.png in Resources */,
 				457AF4AE19E31A2A006B3C6F /* Icon-72.png in Resources */,
 				7537056319D82FD1008FAB38 /* 5_text_eng.png in Resources */,
+				7544F42319E7138A0085CBD8 /* logo_rus.png in Resources */,
 				752B70BD19DC991C00C649B7 /* toy_2_1.png in Resources */,
 				75B676C619D6C7F300E9275A /* about_button_feedback_eng.png in Resources */,
 				457AF4B219E31A2A006B3C6F /* Icon-Small.png in Resources */,
 				75B6777F19D7676C00E9275A /* card_caption_back_arrow.png in Resources */,
 				752B70CA19DC991C00C649B7 /* toy_6_1.png in Resources */,
+				7544F42219E7138A0085CBD8 /* logo_eng.png in Resources */,
+				7544F40F19E7109A0085CBD8 /* rmi_show.mp3 in Resources */,
 				75B6772D19D73D4600E9275A /* game_choice_5_eng.png in Resources */,
 				7537055C19D82FD1008FAB38 /* 1_text_rus.png in Resources */,
+				7544F41019E7109A0085CBD8 /* xmas_bells.mp3 in Resources */,
 				7537055419D82FD1008FAB38 /* 7_popup_art.png in Resources */,
 				75FFFAB519D5DC3500CD310C /* Main.storyboard in Resources */,
 				75B6774519D7585300E9275A /* iphone4_how_to_fon_rus.jpg in Resources */,
@@ -1331,6 +1392,7 @@
 				7537054319D82FD1008FAB38 /* 3_title_eng.png in Resources */,
 				7537054919D82FD1008FAB38 /* 6_title_eng.png in Resources */,
 				75FFFB3519D6105A00CD310C /* menu_button_rate_us_icon.png in Resources */,
+				7544F42719E71AA00085CBD8 /* note-x100.png in Resources */,
 				75B6774719D7585300E9275A /* iphone6_how_to_fon_rus.jpg in Resources */,
 				75A70D9C19DF1D8200ED47FE /* game_toy_3_0.png in Resources */,
 				75F3E02119E3132C0083D9AB /* ipad_tree_fon.png in Resources */,
@@ -1393,6 +1455,7 @@
 				7537054F19D82FD1008FAB38 /* 2_popup_art.png in Resources */,
 				75B676C919D6C7F300E9275A /* about_button_feedback_icon.png in Resources */,
 				75B676EA19D7267800E9275A /* iphone4_game_fon.png in Resources */,
+				7544F40D19E7109A0085CBD8 /* doll_falling.mp3 in Resources */,
 				75B676C519D6C7F300E9275A /* about_button_read_book_eng.png in Resources */,
 				75B2C59E19D87D1D0061C617 /* site_eng.png in Resources */,
 				752B70BB19DC991C00C649B7 /* toy_1_2.png in Resources */,
@@ -1429,6 +1492,7 @@
 				7537053F19D82FD1008FAB38 /* 1_title_eng.png in Resources */,
 				457AF4AC19E31A2A006B3C6F /* Icon-50@2x.png in Resources */,
 				7537056819D82FD1008FAB38 /* 7_text_rus.png in Resources */,
+				7544F42619E71AA00085CBD8 /* note-100.png in Resources */,
 				7537055619D82FD1008FAB38 /* pop_up_button_read_book_eng.png in Resources */,
 				75A70DA719DF1D8200ED47FE /* game_toy_6_2.png in Resources */,
 				75B6778A19D7676C00E9275A /* card_button_mail_eng.png in Resources */,
@@ -1449,6 +1513,7 @@
 				7537054A19D82FD1008FAB38 /* 6_title_rus.png in Resources */,
 				457AF4B519E31A2A006B3C6F /* Icon@2x.png in Resources */,
 				75B6772719D73D4600E9275A /* game_choice_3_eng.png in Resources */,
+				7544F41E19E7134E0085CBD8 /* LogoViewController.xib in Resources */,
 				75B6778819D7676C00E9275A /* card_button_captions_icon.png in Resources */,
 				7537054819D82FD1008FAB38 /* 5_title_rus.png in Resources */,
 				752B70CD19DC991C00C649B7 /* toy_7_2.png in Resources */,
@@ -1456,6 +1521,7 @@
 				752B70BF19DC991C00C649B7 /* toy_3_0.png in Resources */,
 				75FFFB1719D60B8F00CD310C /* text_menu_eng.png in Resources */,
 				75B676F919D7285700E9275A /* play_button_new_game_eng.png in Resources */,
+				7544F40C19E7109A0085CBD8 /* button_click.mp3 in Resources */,
 				75A70DA119DF1D8200ED47FE /* game_toy_4_2.png in Resources */,
 				75B6777B19D7676C00E9275A /* card_caption_text3_rus.png in Resources */,
 				457AF4AB19E31A2A006B3C6F /* Icon-50.png in Resources */,
@@ -1511,6 +1577,7 @@
 				75FFFAD719D5E2A500CD310C /* UIImage+Helps.m in Sources */,
 				75FFFAF219D5E70300CD310C /* NSDictionary+Helps.m in Sources */,
 				75B676A219D6BFB300E9275A /* MenuContainterViewController.m in Sources */,
+				7544F41719E711860085CBD8 /* SoundPlayer.m in Sources */,
 				75FFFAAC19D5DC3500CD310C /* main.m in Sources */,
 				75B6779219D768F300E9275A /* MakeACardContainerViewController.m in Sources */,
 				757B3D1919DDD0EA00D95ED5 /* GameHamContainerViewController.m in Sources */,
@@ -1519,6 +1586,7 @@
 				75FFFAF519D5E71600CD310C /* StoryboardUtils.m in Sources */,
 				75B676AB19D6C4A600E9275A /* AboutViewController.m in Sources */,
 				75FFFAEE19D5E6E500CD310C /* UIButton+Helps.m in Sources */,
+				7544F41D19E7134E0085CBD8 /* LogoViewController.m in Sources */,
 				75B2C59919D859100061C617 /* PopUpContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

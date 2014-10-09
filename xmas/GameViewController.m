@@ -16,6 +16,7 @@
 #import "StatedObject.h"
 #import "NNKObjectParameters.h"
 #import "XMasGoogleAnalitycs.h"
+#import "SoundPlayer.h"
 
 NSString *const pathToPlist = @"toys_scalable";
 //NSString *const pathToPlist = @"toys";
@@ -193,6 +194,7 @@ NSString *const pathToPlist = @"toys_scalable";
     self.objectToRemove = object;
     UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[object]];
     [self.animator addBehavior:gravityBehavior];
+    [[SoundPlayer sharedPlayer] playSoundWithName:@"doll_falling"];
     self.checkingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(checkPos) userInfo:nil repeats:YES];
 }
 

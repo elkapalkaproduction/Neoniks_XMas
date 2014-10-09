@@ -9,7 +9,7 @@
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="BYZ-38-t0r" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -126,9 +126,19 @@
                                     <constraint firstItem="8Dz-OI-FYP" firstAttribute="leading" secondItem="7D8-Yw-bRa" secondAttribute="leading" id="k3C-Bt-YCo"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMG-GA-LDg">
+                                <rect key="frame" x="5" y="25" width="55" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BMG-GA-LDg" secondAttribute="height" multiplier="100:109" id="jlz-hB-621"/>
+                                </constraints>
+                                <state key="normal" image="note-100.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="BMG-GA-LDg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="14B-th-nLe"/>
                             <constraint firstAttribute="trailing" secondItem="oqj-PU-iBN" secondAttribute="trailing" id="5fn-qi-O7z"/>
                             <constraint firstAttribute="trailing" secondItem="QJl-6V-TSH" secondAttribute="trailing" id="8f8-dI-ch4"/>
                             <constraint firstItem="jPb-qL-hH6" firstAttribute="top" secondItem="QJl-6V-TSH" secondAttribute="bottom" constant="10" id="9bG-hQ-vuN"/>
@@ -136,6 +146,7 @@
                             <constraint firstItem="7D8-Yw-bRa" firstAttribute="top" secondItem="PLL-1z-arm" secondAttribute="bottom" id="D8l-WS-o1o"/>
                             <constraint firstItem="nvx-g0-QUY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FkI-ZE-AfP"/>
                             <constraint firstItem="QJl-6V-TSH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IxX-wO-SoM"/>
+                            <constraint firstItem="BMG-GA-LDg" firstAttribute="width" secondItem="nvx-g0-QUY" secondAttribute="width" multiplier="0.5" id="SaG-cg-V8g"/>
                             <constraint firstItem="7D8-Yw-bRa" firstAttribute="width" secondItem="PLL-1z-arm" secondAttribute="width" id="T8g-rz-Gkh"/>
                             <constraint firstItem="PLL-1z-arm" firstAttribute="top" secondItem="jPb-qL-hH6" secondAttribute="bottom" id="TE0-Qj-zcC"/>
                             <constraint firstItem="f2d-sB-4Et" firstAttribute="width" secondItem="oqj-PU-iBN" secondAttribute="width" multiplier="0.25" id="UxC-ok-l5u"/>
@@ -152,6 +163,7 @@
                             <constraint firstItem="oqj-PU-iBN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vMv-r9-ZNR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f2d-sB-4Et" secondAttribute="bottom" id="w6Y-AU-Kdl"/>
                             <constraint firstAttribute="centerX" secondItem="7D8-Yw-bRa" secondAttribute="centerX" id="y1w-B4-Hou"/>
+                            <constraint firstItem="BMG-GA-LDg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="yuK-nv-Bzz"/>
                             <constraint firstAttribute="trailing" secondItem="PLL-1z-arm" secondAttribute="trailing" constant="220" id="zYy-DI-9Jh">
                                 <variation key="heightClass=regular-widthClass=compact" constant="85"/>
                             </constraint>
@@ -161,6 +173,7 @@
                         <outlet property="backgroundImage" destination="oqj-PU-iBN" id="Bss-ic-f2W"/>
                         <outlet property="bannerImage" destination="QJl-6V-TSH" id="bBb-Nh-v7L"/>
                         <outlet property="languageButton" destination="nvx-g0-QUY" id="vTL-Dj-eLd"/>
+                        <outlet property="musicNote" destination="BMG-GA-LDg" id="0rx-oJ-yld"/>
                         <outlet property="playButton" destination="deP-vw-PnB" id="2wB-Un-TUl"/>
                         <outlet property="playIcon" destination="Vy7-6Q-HO7" id="XHi-z1-Of3"/>
                         <outlet property="siteButton" destination="f2d-sB-4Et" id="1Ig-r3-4XQ"/>
@@ -1465,6 +1478,7 @@
         <image name="menu_button_play_icon.png" width="220" height="220"/>
         <image name="menu_button_rate_us_eng.png" width="443" height="90"/>
         <image name="menu_button_rate_us_icon.png" width="220" height="220"/>
+        <image name="note-100.png" width="100" height="109"/>
         <image name="play_button_back_eng.png" width="179" height="101"/>
         <image name="play_button_back_icon.png" width="220" height="220"/>
         <image name="play_button_new_game_eng.png" width="179" height="101"/>

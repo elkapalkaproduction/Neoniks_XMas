@@ -57,8 +57,8 @@ NSString *const EnglishLanguageTag = @"en";
 }
 
 
-+ (NSString *)currentValue {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:PreferedLanguage];
++ (NSNumber *)currentValue {
+    return [LanguageUtils isEnglish] ? @0 : @1;
 }
 
 @end

@@ -94,8 +94,8 @@
     NSString *toyID = [self toyForCharacter:self.character imageNumber:idx];
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen
                                                        action:GAnalitycsPlayXmasToy
-                                                        label:[NSString stringWithFormat:@"toy_%ld", (long)idx]
-                                                        value:@(self.character)];
+                                                        label:toyID
+                                                        value:[LanguageUtils currentValue]];
 
     [self.delegate pressedToyWithID:toyID];
 }

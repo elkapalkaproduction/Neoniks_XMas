@@ -57,7 +57,7 @@ NSString *const pathToPlist = @"toys_scalable";
 #pragma mark - Actions
 
 - (void)openSite {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL urlForSite];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }
@@ -122,7 +122,7 @@ NSString *const pathToPlist = @"toys_scalable";
 #pragma mark - PopUpDelegate
 
 - (void)close {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayPopupClosed label:[LanguageUtils currentValue] value:@(self.popUpViewController.curentPage + 1)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayPopupClosed label:[@(self.popUpViewController.curentPage + 1) stringValue] value:[LanguageUtils currentValue] ];
 
     [self closeWithShadow:YES];
 }
@@ -130,7 +130,7 @@ NSString *const pathToPlist = @"toys_scalable";
 
 
 - (void)showPage:(NSInteger)pageToShow isPrev:(BOOL)prev {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayArrowPopupClick label:[LanguageUtils currentValue] value:@(pageToShow + 1)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayArrowPopupClick label:[@(pageToShow + 1) stringValue] value:[LanguageUtils currentValue]];
     [self closeWithShadow:NO];
     PopUpParameters *param = [[PopUpParameters alloc] init];
     param.isInitialView = NO;

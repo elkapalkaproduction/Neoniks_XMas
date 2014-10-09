@@ -40,19 +40,19 @@
 #pragma mark - Actions
 
 - (void)goToAbout {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageAboutUs label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageAboutUs label:nil value:[LanguageUtils currentValue]];
     [StoryboardUtils presentViewControllerWithStoryboardID:[AboutViewController storyboardID] fromViewController:self];
 }
 
 
 - (void)goToHowTo {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageHowToPlay label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageHowToPlay label:nil value:[LanguageUtils currentValue]];
     [StoryboardUtils presentViewControllerWithStoryboardID:[HowToViewController storyboardID] fromViewController:self];
 }
 
 
 - (void)goToRateUs {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageRateUs label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageRateUs label:nil value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL openStoreToAppWithID:bookAppID];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }

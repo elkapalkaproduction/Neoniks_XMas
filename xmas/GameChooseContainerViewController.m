@@ -52,13 +52,13 @@
 
 - (void)loadNextCharacterByArrow {
     [self loadNextCharacter];
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByArrow label:@"arrow next" value:@(self.currentMainCharacter)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByArrow label:[@"arrow next" stringByAppendingString:[@(self.currentMainCharacter) stringValue]] value:[LanguageUtils currentValue]];
 }
 
 
 - (void)loadNextCharacterByCharacter {
     [self loadNextCharacter];
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByClick label:@"next click" value:@(self.currentMainCharacter)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByClick label:[@"next click" stringByAppendingString:[@(self.currentMainCharacter) stringValue]] value:[LanguageUtils currentValue]];
 }
 
 
@@ -70,13 +70,13 @@
 
 - (void)loadPreviousCharacterByArrow {
     [self loadPreviousCharacter];
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByArrow label:@"arrow previous" value:@(self.currentMainCharacter)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByArrow label:[@"arrow previous" stringByAppendingString:[@(self.currentMainCharacter) stringValue]] value:[LanguageUtils currentValue]];
 }
 
 
 - (void)loadPreviousCharacterByCharacter {
     [self loadPreviousCharacter];
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByClick label:@"previous click" value:@(self.currentMainCharacter)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayCharacterChangedByClick label:[@"previous click" stringByAppendingString:[@(self.currentMainCharacter) stringValue]] value:[LanguageUtils currentValue]];
 }
 
 
@@ -87,7 +87,7 @@
 
 
 - (void)selectCharacter {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayPopupAppeared label:[LanguageUtils currentValue] value:@(self.currentMainCharacter)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayPopupAppeared label:[@"appear" stringByAppendingString:[@(self.currentMainCharacter) stringValue]] value:[LanguageUtils currentValue]];
 
     if ([self.delegate respondsToSelector:@selector(selectCharacter:)]) {
         [self.delegate selectCharacter:self.currentMainCharacter];

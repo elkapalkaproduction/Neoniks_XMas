@@ -38,8 +38,8 @@
     [LanguageUtils setOpositeLanguage];
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage
                                                        action:GAnalitycsMainPageLanguageChanged
-                                                        label:[LanguageUtils currentValue]
-                                                        value:nil];
+                                                        label:nil
+                                                        value:[LanguageUtils currentValue]];
     [self updateInterface];
 }
 
@@ -50,19 +50,19 @@
 
 
 - (void)didTapPlayButton {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPagePlayClicked label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPagePlayClicked label:nil value:[LanguageUtils currentValue]];
     [self play];
 }
 
 
 - (void)didTapPlayIcon {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageArrowPlay label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageArrowPlay label:nil value:[LanguageUtils currentValue]];
     [self play];
 }
 
 
 - (void)openSite {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL urlForSite];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }

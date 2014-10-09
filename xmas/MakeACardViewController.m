@@ -56,7 +56,9 @@
 #pragma mark - MakeACardDelegate
 
 - (void)captions {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotCaption label:[LanguageUtils currentValue] value:@(self.imageIndex)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot
+                                                       action:GAnalitycsSnapshotCaption
+                                                        label:[@(self.imageIndex) stringValue] value:[LanguageUtils currentValue]];
     CaptionsViewController *captions = [CaptionsViewController instantiateWithDelegate:self];
     captions.view.bounds = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     captions.view.frame = captions.view.bounds;
@@ -65,7 +67,7 @@
 
 
 - (void)send {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotSend label:[LanguageUtils currentValue] value:@(self.imageIndex)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotSend label:[@(self.imageIndex) stringValue] value:[LanguageUtils currentValue]];
     UIImage *image = [UIImage captureScreenInView:self.cardView];
     MFMailComposeViewController *mailCont = [self createMailFromImage:image];
     if (!mailCont) return;
@@ -74,7 +76,7 @@
 
 
 - (void)save {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotSave label:[LanguageUtils currentValue] value:@(self.imageIndex)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotSave label:[@(self.imageIndex) stringValue] value:[LanguageUtils currentValue]];
     UIImage *image = [UIImage captureScreenInView:self.cardView];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     

@@ -37,19 +37,19 @@
 #pragma mark - Actions
 
 - (void)goBack {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReturnMenu label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReturnMenu label:nil value:[LanguageUtils currentValue]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 - (void)startNewGame {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayNewGame label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayNewGame label:nil value:[LanguageUtils currentValue]];
     [self.delegate startNewGame];
 }
 
 
 - (void)takeSnapshot {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayTakeSnapshot label:nil value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayTakeSnapshot label:nil value:[LanguageUtils currentValue]];
     [self.delegate takeSnapshot];
 }
 

@@ -29,7 +29,7 @@
 #pragma Actions
 
 - (void)openSite {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:nil];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL urlForSite];
     [[UIApplication sharedApplication] openURL:bookUrl];
 }

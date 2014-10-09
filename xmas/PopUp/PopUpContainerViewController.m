@@ -32,7 +32,7 @@
 
 - (void)readTheBook {
     NSInteger pageToShow =  ((PopUpViewController *)self.parentViewController).curentPage;
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReadBook label:[DeviceUtils deviceName] value:@(pageToShow + 1)];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReadBook label:[@(pageToShow + 1) stringValue] value:[LanguageUtils currentValue]];
     NSURL *bookAppUrl = [NSURL URLWithString:NeoniksBookLink];
     if ([[UIApplication sharedApplication] canOpenURL:bookAppUrl]) {
         [[UIApplication sharedApplication] openURL:bookAppUrl];

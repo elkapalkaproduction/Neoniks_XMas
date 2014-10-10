@@ -17,11 +17,12 @@
 #import "NNKObjectParameters.h"
 #import "XMasGoogleAnalitycs.h"
 #import "SoundPlayer.h"
+#import "NNKAlertView.h"
 
 NSString *const pathToPlist = @"toys_scalable";
 //NSString *const pathToPlist = @"toys";
 
-@interface GameViewController () <GameChooseDelegate, GameLeftMenuDelegate, PopUpDelegate, HamDelegate, StatedObjectDelegate, UIDynamicAnimatorDelegate>
+@interface GameViewController () <GameChooseDelegate, GameLeftMenuDelegate, PopUpDelegate, HamDelegate, StatedObjectDelegate, UIDynamicAnimatorDelegate, NNKAlertViewDelegate>
 
 @property (assign, nonatomic) GameCharacter selectedCharacter;
 @property (strong, nonatomic) PopUpViewController *popUpViewController;
@@ -142,6 +143,24 @@ NSString *const pathToPlist = @"toys_scalable";
 }
 
 
+#pragma mark - Alert View Delegate
+
+- (void)alertView:(NNKAlertView *)alertView pressedButtonWithResponse:(BOOL)response {
+    if (!response) {
+        return;
+    }
+    if (alertView.messageType == AlertViewMessageNewGame) {
+        [self updateInterface];
+        [self.chooseContainer changeMainCharacter:GameCharacterPhoebe];
+        
+        [self cleanAllResources];
+     } else if (alertView.messageType == AlertViewMessageQuit) {
+        [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReturnMenu label:nil value:[LanguageUtils currentValue]];
+        [self dismissViewControllerAnimated:YES completion:nil];
+
+    }
+}
+
 
 #pragma mark - GameLeftMenuDelegate
 
@@ -155,11 +174,9 @@ NSString *const pathToPlist = @"toys_scalable";
 
 
 - (void)startNewGame {
-    [self updateInterface];
-    [self.ham hideViewWithCompletion:^{
-        [self.chooseContainer changeMainCharacter:GameCharacterPhoebe];
-    }];
-    [self cleanAllResources];
+
+    NNKAlertView *alert = [NNKAlertView initWithMessageType:AlertViewMessageNewGame delegate:self];
+    [StoryboardUtils addViewController:alert onViewController:self belowSubview:nil];
 }
 
 

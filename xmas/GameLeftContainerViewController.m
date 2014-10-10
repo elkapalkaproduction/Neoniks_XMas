@@ -8,6 +8,7 @@
 
 #import "GameLeftContainerViewController.h"
 #import "XMasGoogleAnalitycs.h"
+#import "NNKAlertView.h"
 
 @interface GameLeftContainerViewController ()
 
@@ -37,9 +38,10 @@
 #pragma mark - Actions
 
 - (void)goBack {
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReturnMenu label:nil value:[LanguageUtils currentValue]];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+    NNKAlertView *alert = [NNKAlertView initWithMessageType:AlertViewMessageQuit delegate:(UIViewController<NNKAlertViewDelegate> *)self.parentViewController];
+    [StoryboardUtils addViewController:alert onViewController:self.parentViewController belowSubview:nil];
+
+} 
 
 
 - (void)startNewGame {

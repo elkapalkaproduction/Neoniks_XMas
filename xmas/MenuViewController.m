@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *playIcon;
 @property (weak, nonatomic) IBOutlet UIButton *siteButton;
 @property (weak, nonatomic) IBOutlet UIButton *musicNote;
-@property (assign, nonatomic) BOOL dontTurnOnSound;
 
 @end
 
@@ -36,19 +35,6 @@
     [self.musicNote addTarget:self onTouchUpInsideWithAction:@selector(stopPlaySound)];
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    if (!self.dontTurnOnSound) {
-        [[SoundPlayer sharedPlayer] playBakgroundMusic];
-    }
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    self.dontTurnOnSound = ![[SoundPlayer sharedPlayer] isPlayingBackgroundMusic];
-    [[SoundPlayer sharedPlayer] pauseBackgroundMusic];
-}
 
 #pragma mark - Actions
 

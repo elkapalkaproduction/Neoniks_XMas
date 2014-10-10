@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1438,6 +1439,87 @@
             </objects>
             <point key="canvasLocation" x="1184" y="2208"/>
         </scene>
+        <!--Alert View-->
+        <scene sceneID="BFq-Iz-FhL">
+            <objects>
+                <viewController storyboardIdentifier="alertView" id="Dba-2i-CfS" customClass="NNKAlertView" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="REf-OM-SmG"/>
+                        <viewControllerLayoutGuide type="bottom" id="ocy-Kc-v2g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lt1-DS-9GG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYk-oK-Bg3">
+                                <rect key="frame" x="127" y="218" width="346" height="164"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="mze-sK-kob">
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="164"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert_message_1_eng.png" translatesAutoresizingMaskIntoConstraints="NO" id="V1h-Zi-ZAr">
+                                        <rect key="frame" x="43" y="83" width="260" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="JDS-kt-gNh"/>
+                                            <constraint firstAttribute="height" constant="21" id="Rz2-Pi-XNz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkt-G4-GAk">
+                                        <rect key="frame" x="92" y="114" width="35" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="BaH-UT-br6"/>
+                                            <constraint firstAttribute="width" constant="35" id="PXq-K0-w5Q"/>
+                                        </constraints>
+                                        <state key="normal" image="alert_yes_eng.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wM1-cG-tLM">
+                                        <rect key="frame" x="219" y="114" width="35" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="LXO-l9-ucH"/>
+                                            <constraint firstAttribute="width" constant="35" id="eyo-hj-Kte"/>
+                                        </constraints>
+                                        <state key="normal" image="alert_no_eng.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wM1-cG-tLM" firstAttribute="leading" secondItem="bkt-G4-GAk" secondAttribute="trailing" constant="92" id="BJV-68-aYA"/>
+                                    <constraint firstItem="mze-sK-kob" firstAttribute="top" secondItem="kYk-oK-Bg3" secondAttribute="top" id="Hds-E2-GpW"/>
+                                    <constraint firstAttribute="bottom" secondItem="V1h-Zi-ZAr" secondAttribute="bottom" constant="60" id="Sgf-v7-aPk"/>
+                                    <constraint firstItem="mze-sK-kob" firstAttribute="leading" secondItem="kYk-oK-Bg3" secondAttribute="leading" id="XyL-Mb-1Of"/>
+                                    <constraint firstAttribute="bottom" secondItem="mze-sK-kob" secondAttribute="bottom" id="ZVB-xK-Y3l"/>
+                                    <constraint firstAttribute="trailing" secondItem="mze-sK-kob" secondAttribute="trailing" id="Zsr-Va-b4Y"/>
+                                    <constraint firstAttribute="width" constant="346" id="b6x-LJ-ktc"/>
+                                    <constraint firstItem="wM1-cG-tLM" firstAttribute="top" secondItem="V1h-Zi-ZAr" secondAttribute="bottom" constant="10" id="eQ2-qK-SKB"/>
+                                    <constraint firstItem="bkt-G4-GAk" firstAttribute="top" secondItem="V1h-Zi-ZAr" secondAttribute="bottom" constant="10" id="ews-Gv-kOQ"/>
+                                    <constraint firstAttribute="centerX" secondItem="V1h-Zi-ZAr" secondAttribute="centerX" id="gp9-N4-Xrr"/>
+                                    <constraint firstItem="bkt-G4-GAk" firstAttribute="leading" secondItem="kYk-oK-Bg3" secondAttribute="leading" constant="92" id="sp0-ct-h8N"/>
+                                    <constraint firstAttribute="height" constant="164" id="xHz-Eg-CMl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="kYk-oK-Bg3" secondAttribute="centerY" id="1IW-Jo-lOH"/>
+                            <constraint firstAttribute="centerX" secondItem="kYk-oK-Bg3" secondAttribute="centerX" id="Rdk-8a-J15"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="embedView" destination="kYk-oK-Bg3" id="TWt-2V-iT5"/>
+                        <outlet property="noButton" destination="wM1-cG-tLM" id="6UY-2M-xHR"/>
+                        <outlet property="textLabel" destination="V1h-Zi-ZAr" id="gQh-ty-3LR"/>
+                        <outlet property="yesButton" destination="bkt-G4-GAk" id="1IQ-co-uXc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JAi-LC-s5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="-59"/>
+        </scene>
     </scenes>
     <resources>
         <image name="0_popup_art.png" width="1224" height="1250"/>
@@ -1448,6 +1530,10 @@
         <image name="about_button_read_book_eng.png" width="465" height="160"/>
         <image name="about_button_read_book_icon.png" width="220" height="220"/>
         <image name="about_button_site_eng.png" width="467" height="95"/>
+        <image name="alert_cloud.png" width="866" height="410"/>
+        <image name="alert_message_1_eng.png" width="650" height="52"/>
+        <image name="alert_no_eng.png" width="88" height="50"/>
+        <image name="alert_yes_eng.png" width="88" height="50"/>
         <image name="back_arrow.png" width="64" height="77"/>
         <image name="blue_transparent_background.png" width="1535" height="2048"/>
         <image name="card_button_captions_eng.png" width="245" height="77"/>

@@ -20,6 +20,17 @@
 		457AF4B319E31A2A006B3C6F /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 457AF4A619E31A2A006B3C6F /* Icon-Small@2x.png */; };
 		457AF4B419E31A2A006B3C6F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 457AF4A719E31A2A006B3C6F /* Icon.png */; };
 		457AF4B519E31A2A006B3C6F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 457AF4A819E31A2A006B3C6F /* Icon@2x.png */; };
+		4585E97419E8FF3C00C5C6C3 /* TSAppEventSourceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E95919E8FF3C00C5C6C3 /* TSAppEventSourceImpl.m */; };
+		4585E97519E8FF3C00C5C6C3 /* TSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E95B19E8FF3C00C5C6C3 /* TSConfig.m */; };
+		4585E97619E8FF3C00C5C6C3 /* TSCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E95D19E8FF3C00C5C6C3 /* TSCore.m */; };
+		4585E97719E8FF3C00C5C6C3 /* TSCoreListenerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E96019E8FF3C00C5C6C3 /* TSCoreListenerImpl.m */; };
+		4585E97819E8FF3C00C5C6C3 /* TSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E96319E8FF3C00C5C6C3 /* TSEvent.m */; };
+		4585E97919E8FF3C00C5C6C3 /* TSHit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E96619E8FF3C00C5C6C3 /* TSHit.m */; };
+		4585E97A19E8FF3C00C5C6C3 /* TSLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E96819E8FF3C00C5C6C3 /* TSLogging.m */; };
+		4585E97B19E8FF3C00C5C6C3 /* TSPlatformImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E96C19E8FF3C00C5C6C3 /* TSPlatformImpl.m */; };
+		4585E97C19E8FF3C00C5C6C3 /* TSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E96E19E8FF3C00C5C6C3 /* TSResponse.m */; };
+		4585E97D19E8FF3C00C5C6C3 /* TSTapstream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E97019E8FF3C00C5C6C3 /* TSTapstream.m */; };
+		4585E97E19E8FF3C00C5C6C3 /* TSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4585E97219E8FF3C00C5C6C3 /* TSUtils.m */; };
 		752B70B619DC991C00C649B7 /* ham_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 752B709B19DC991C00C649B7 /* ham_fon.png */; };
 		752B70B719DC991C00C649B7 /* ham_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 752B709C19DC991C00C649B7 /* ham_shadow.png */; };
 		752B70B919DC991C00C649B7 /* toy_1_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 752B709E19DC991C00C649B7 /* toy_1_0.png */; };
@@ -324,6 +335,36 @@
 		457AF4A619E31A2A006B3C6F /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		457AF4A719E31A2A006B3C6F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		457AF4A819E31A2A006B3C6F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		4585E95619E8FF3C00C5C6C3 /* TSApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSApi.h; sourceTree = "<group>"; };
+		4585E95719E8FF3C00C5C6C3 /* TSAppEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAppEventSource.h; sourceTree = "<group>"; };
+		4585E95819E8FF3C00C5C6C3 /* TSAppEventSourceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAppEventSourceImpl.h; sourceTree = "<group>"; };
+		4585E95919E8FF3C00C5C6C3 /* TSAppEventSourceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAppEventSourceImpl.m; sourceTree = "<group>"; };
+		4585E95A19E8FF3C00C5C6C3 /* TSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSConfig.h; sourceTree = "<group>"; };
+		4585E95B19E8FF3C00C5C6C3 /* TSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSConfig.m; sourceTree = "<group>"; };
+		4585E95C19E8FF3C00C5C6C3 /* TSCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCore.h; sourceTree = "<group>"; };
+		4585E95D19E8FF3C00C5C6C3 /* TSCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCore.m; sourceTree = "<group>"; };
+		4585E95E19E8FF3C00C5C6C3 /* TSCoreListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCoreListener.h; sourceTree = "<group>"; };
+		4585E95F19E8FF3C00C5C6C3 /* TSCoreListenerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCoreListenerImpl.h; sourceTree = "<group>"; };
+		4585E96019E8FF3C00C5C6C3 /* TSCoreListenerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCoreListenerImpl.m; sourceTree = "<group>"; };
+		4585E96119E8FF3C00C5C6C3 /* TSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDelegate.h; sourceTree = "<group>"; };
+		4585E96219E8FF3C00C5C6C3 /* TSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSEvent.h; sourceTree = "<group>"; };
+		4585E96319E8FF3C00C5C6C3 /* TSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSEvent.m; sourceTree = "<group>"; };
+		4585E96419E8FF3C00C5C6C3 /* TSHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHelpers.h; sourceTree = "<group>"; };
+		4585E96519E8FF3C00C5C6C3 /* TSHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSHit.h; sourceTree = "<group>"; };
+		4585E96619E8FF3C00C5C6C3 /* TSHit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSHit.m; sourceTree = "<group>"; };
+		4585E96719E8FF3C00C5C6C3 /* TSLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLogging.h; sourceTree = "<group>"; };
+		4585E96819E8FF3C00C5C6C3 /* TSLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLogging.m; sourceTree = "<group>"; };
+		4585E96919E8FF3C00C5C6C3 /* TSLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLogLevel.h; sourceTree = "<group>"; };
+		4585E96A19E8FF3C00C5C6C3 /* TSPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPlatform.h; sourceTree = "<group>"; };
+		4585E96B19E8FF3C00C5C6C3 /* TSPlatformImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPlatformImpl.h; sourceTree = "<group>"; };
+		4585E96C19E8FF3C00C5C6C3 /* TSPlatformImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPlatformImpl.m; sourceTree = "<group>"; };
+		4585E96D19E8FF3C00C5C6C3 /* TSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSResponse.h; sourceTree = "<group>"; };
+		4585E96E19E8FF3C00C5C6C3 /* TSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSResponse.m; sourceTree = "<group>"; };
+		4585E96F19E8FF3C00C5C6C3 /* TSTapstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSTapstream.h; sourceTree = "<group>"; };
+		4585E97019E8FF3C00C5C6C3 /* TSTapstream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSTapstream.m; sourceTree = "<group>"; };
+		4585E97119E8FF3C00C5C6C3 /* TSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSUtils.h; sourceTree = "<group>"; };
+		4585E97219E8FF3C00C5C6C3 /* TSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSUtils.m; sourceTree = "<group>"; };
+		4585E97319E8FF3C00C5C6C3 /* TSWordOfMouthDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSWordOfMouthDelegate.h; sourceTree = "<group>"; };
 		752B709B19DC991C00C649B7 /* ham_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ham_fon.png; sourceTree = "<group>"; };
 		752B709C19DC991C00C649B7 /* ham_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ham_shadow.png; sourceTree = "<group>"; };
 		752B709E19DC991C00C649B7 /* toy_1_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_1_0.png; sourceTree = "<group>"; };
@@ -702,6 +743,43 @@
 			name = icons;
 			sourceTree = "<group>";
 		};
+		4585E95519E8FF3C00C5C6C3 /* Tapstream */ = {
+			isa = PBXGroup;
+			children = (
+				4585E95619E8FF3C00C5C6C3 /* TSApi.h */,
+				4585E95719E8FF3C00C5C6C3 /* TSAppEventSource.h */,
+				4585E95819E8FF3C00C5C6C3 /* TSAppEventSourceImpl.h */,
+				4585E95919E8FF3C00C5C6C3 /* TSAppEventSourceImpl.m */,
+				4585E95A19E8FF3C00C5C6C3 /* TSConfig.h */,
+				4585E95B19E8FF3C00C5C6C3 /* TSConfig.m */,
+				4585E95C19E8FF3C00C5C6C3 /* TSCore.h */,
+				4585E95D19E8FF3C00C5C6C3 /* TSCore.m */,
+				4585E95E19E8FF3C00C5C6C3 /* TSCoreListener.h */,
+				4585E95F19E8FF3C00C5C6C3 /* TSCoreListenerImpl.h */,
+				4585E96019E8FF3C00C5C6C3 /* TSCoreListenerImpl.m */,
+				4585E96119E8FF3C00C5C6C3 /* TSDelegate.h */,
+				4585E96219E8FF3C00C5C6C3 /* TSEvent.h */,
+				4585E96319E8FF3C00C5C6C3 /* TSEvent.m */,
+				4585E96419E8FF3C00C5C6C3 /* TSHelpers.h */,
+				4585E96519E8FF3C00C5C6C3 /* TSHit.h */,
+				4585E96619E8FF3C00C5C6C3 /* TSHit.m */,
+				4585E96719E8FF3C00C5C6C3 /* TSLogging.h */,
+				4585E96819E8FF3C00C5C6C3 /* TSLogging.m */,
+				4585E96919E8FF3C00C5C6C3 /* TSLogLevel.h */,
+				4585E96A19E8FF3C00C5C6C3 /* TSPlatform.h */,
+				4585E96B19E8FF3C00C5C6C3 /* TSPlatformImpl.h */,
+				4585E96C19E8FF3C00C5C6C3 /* TSPlatformImpl.m */,
+				4585E96D19E8FF3C00C5C6C3 /* TSResponse.h */,
+				4585E96E19E8FF3C00C5C6C3 /* TSResponse.m */,
+				4585E96F19E8FF3C00C5C6C3 /* TSTapstream.h */,
+				4585E97019E8FF3C00C5C6C3 /* TSTapstream.m */,
+				4585E97119E8FF3C00C5C6C3 /* TSUtils.h */,
+				4585E97219E8FF3C00C5C6C3 /* TSUtils.m */,
+				4585E97319E8FF3C00C5C6C3 /* TSWordOfMouthDelegate.h */,
+			);
+			path = Tapstream;
+			sourceTree = "<group>";
+		};
 		752B709A19DC991C00C649B7 /* hammock_images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1130,7 @@
 		75FFFAA819D5DC3500CD310C /* xmas */ = {
 			isa = PBXGroup;
 			children = (
+				4585E95519E8FF3C00C5C6C3 /* Tapstream */,
 				7544F41819E7134E0085CBD8 /* LogoViewController */,
 				75FFFAAD19D5DC3500CD310C /* AppDelegate.h */,
 				75FFFAAE19D5DC3500CD310C /* AppDelegate.m */,
@@ -1604,33 +1683,44 @@
 			files = (
 				75B676D519D6E6F200E9275A /* HowToViewController.m in Sources */,
 				75FFFAB219D5DC3500CD310C /* MenuViewController.m in Sources */,
+				4585E97819E8FF3C00C5C6C3 /* TSEvent.m in Sources */,
 				75A70D3719DF147100ED47FE /* StatedObject.m in Sources */,
 				75FFFADA19D5E2B700CD310C /* DeviceUtils.m in Sources */,
+				4585E97B19E8FF3C00C5C6C3 /* TSPlatformImpl.m in Sources */,
 				75B676AE19D6C57300E9275A /* XMasBaseViewController.m in Sources */,
 				75B6775619D75E6A00E9275A /* MakeACardViewController.m in Sources */,
+				4585E97D19E8FF3C00C5C6C3 /* TSTapstream.m in Sources */,
 				75FFFAE019D5E2F000CD310C /* LanguageUtils.m in Sources */,
 				75FFFAEB19D5E6DA00CD310C /* NSURL+Helps.m in Sources */,
 				75A70D4219DF14DA00ED47FE /* NNKObjectAction.m in Sources */,
+				4585E97E19E8FF3C00C5C6C3 /* TSUtils.m in Sources */,
 				75B6773B19D7507200E9275A /* GameChooseContainerViewController.m in Sources */,
 				75A70D3F19DF14CB00ED47FE /* NNKObjectState.m in Sources */,
 				757B3D1619DDCFDC00D95ED5 /* NNKShapedButton.m in Sources */,
+				4585E97619E8FF3C00C5C6C3 /* TSCore.m in Sources */,
 				75A70D3A19DF148500ED47FE /* NNKObjectParameters.m in Sources */,
 				75B676CE19D6CE0E00E9275A /* AboutContainerViewController.m in Sources */,
 				753704F819D82B68008FAB38 /* PopUpAnimations.m in Sources */,
 				75FFFADD19D5E2DF00CD310C /* NSString+Helps.m in Sources */,
+				4585E97919E8FF3C00C5C6C3 /* TSHit.m in Sources */,
 				75B676E419D6F02200E9275A /* GameViewController.m in Sources */,
+				4585E97A19E8FF3C00C5C6C3 /* TSLogging.m in Sources */,
 				75B6779519D7813400E9275A /* CaptionsViewController.m in Sources */,
 				753704FA19D82B68008FAB38 /* PopUpViewController.m in Sources */,
 				75B6770119D72DE300E9275A /* GameLeftContainerViewController.m in Sources */,
 				75FFFAAF19D5DC3500CD310C /* AppDelegate.m in Sources */,
 				75FFFAD719D5E2A500CD310C /* UIImage+Helps.m in Sources */,
+				4585E97519E8FF3C00C5C6C3 /* TSConfig.m in Sources */,
 				75FFFAF219D5E70300CD310C /* NSDictionary+Helps.m in Sources */,
+				4585E97419E8FF3C00C5C6C3 /* TSAppEventSourceImpl.m in Sources */,
 				75B676A219D6BFB300E9275A /* MenuContainterViewController.m in Sources */,
 				7544F41719E711860085CBD8 /* SoundPlayer.m in Sources */,
 				75FFFAAC19D5DC3500CD310C /* main.m in Sources */,
 				75B6779219D768F300E9275A /* MakeACardContainerViewController.m in Sources */,
 				752F58F319E87DA80001D24D /* NNKAlertView.m in Sources */,
+				4585E97719E8FF3C00C5C6C3 /* TSCoreListenerImpl.m in Sources */,
 				757B3D1919DDD0EA00D95ED5 /* GameHamContainerViewController.m in Sources */,
+				4585E97C19E8FF3C00C5C6C3 /* TSResponse.m in Sources */,
 				753704F919D82B68008FAB38 /* PopUpParameters.m in Sources */,
 				754F2C1C19E476AA008EA274 /* XMasGoogleAnalitycs.m in Sources */,
 				75FFFAF519D5E71600CD310C /* StoryboardUtils.m in Sources */,

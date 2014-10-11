@@ -10,6 +10,7 @@
 #import "XMasGoogleAnalitycs.h"
 #import "MenuViewController.h"
 #import "LogoViewController.h"
+#import "TSTapstream.h"
 NSString *const xmasAppID = @"918984559";
 NSString *const bookAppID = @"899196882";
 
@@ -34,6 +35,10 @@ NSString *const bookAppID = @"899196882";
     [self.navController setNavigationBarHidden:YES];
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];    // Override point for customization after application launch.
+    
+    // Tapstream SDK
+    TSConfig *config = [TSConfig configWithDefaults];
+    [TSTapstream createWithAccountName:@"neoniks" developerSecret:@"c_9ek3--RY-PeLND6eR4_Q" config:config];
 
     // Override point for customization after application launch.
     return YES;

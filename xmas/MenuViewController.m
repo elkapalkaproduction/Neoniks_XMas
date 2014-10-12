@@ -10,6 +10,9 @@
 #import "GameViewController.h"
 #import "XMasGoogleAnalitycs.h"
 #import "SoundPlayer.h"
+#ifdef FreeVersion
+#import "AdsManager.h"
+#endif
 
 @interface MenuViewController ()
 
@@ -33,6 +36,15 @@
     [self.playIcon addTarget:self onTouchUpInsideWithAction:@selector(didTapPlayIcon)];
     [self.siteButton addTarget:self onTouchUpInsideWithAction:@selector(openSite)];
     [self.musicNote addTarget:self onTouchUpInsideWithAction:@selector(stopPlaySound)];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+#ifdef FreeVersion
+    [[AdsManager sharedManager] showStartVideo];
+#endif
+
 }
 
 

@@ -10,7 +10,11 @@
 #import "XMasGoogleAnalitycs.h"
 #import "MenuViewController.h"
 #import "LogoViewController.h"
-#import "TSTapstream.h"
+#import "AppBoxTManager.h"
+#ifdef FreeVersion
+#import "AdsManager.h"
+#endif
+
 NSString *const xmasAppID = @"918984559";
 NSString *const bookAppID = @"899196882";
 
@@ -26,7 +30,11 @@ NSString *const bookAppID = @"899196882";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [LanguageUtils setupLanguage];
     [XMasGoogleAnalitycs sharedManager];
-    
+    [[AppBoxTManager sharedManager] setupLibrary];
+#ifdef FreeVersion
+    [[AdsManager sharedManager] setupAllLibraries];
+#endif
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LogoViewController *logoViewController = [[LogoViewController alloc] initWithNibName:@"LogoViewController" bundle:nil];
     self.viewController = [[StoryboardUtils storyboard] instantiateViewControllerWithIdentifier:[MenuViewController storyboardID]];
@@ -36,9 +44,6 @@ NSString *const bookAppID = @"899196882";
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];    // Override point for customization after application launch.
     
-    // Tapstream SDK
-    TSConfig *config = [TSConfig configWithDefaults];
-    [TSTapstream createWithAccountName:@"neoniks" developerSecret:@"c_9ek3--RY-PeLND6eR4_Q" config:config];
 
     // Override point for customization after application launch.
     return YES;

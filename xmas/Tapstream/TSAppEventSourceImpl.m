@@ -165,6 +165,7 @@ static void TSLoadStoreKitClasses()
 				}
 			}
 			break;
+            default:break;
 		}
 	}
 }

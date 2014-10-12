@@ -8,6 +8,7 @@
 
 #import "AboutViewController.h"
 #import "XMasGoogleAnalitycs.h"
+#import "AppBoxTManager.h"
 
 @interface AboutViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *contributorsText;
@@ -23,6 +24,7 @@
     self.fonImage = @"about";
     [super viewDidLoad];
     [self.siteButton addTarget:self onTouchUpInsideWithAction:@selector(openSite)];
+    [self performSelector:@selector(appbox) withObject:nil afterDelay:1.f];
 }
 
 
@@ -41,6 +43,11 @@
     [super updateInterface];
     self.siteButton.image = [UIImage imageWithUnlocalizedName:@"about_button_site"];
     self.contributorsText.image = [UIImage textImageWithName:@"contributors"];
+}
+
+
+- (void)appbox {
+    [[AppBoxTManager sharedManager] show:self];
 }
 
 @end

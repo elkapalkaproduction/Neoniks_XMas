@@ -19,88 +19,86 @@
 
 @implementation ABXNotificationsViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.title = [@"Notifications" localizedString];
-    
+
     if (![ABXApiClient isInternetReachable]) {
         [self.activityView stopAnimating];
         [self showError:[@"No Internet" localizedString]];
-    }
-    else {
+    } else {
         [self fetchNotifications];
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark - Buttons
 
-- (void)onDone
-{
+- (void)onDone {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
+
 #pragma mark - Fetching
 
-- (void)fetchNotifications
-{
+- (void)fetchNotifications {
     [ABXNotification fetch:^(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error) {
-        [self.activityView stopAnimating];
-        if (responseCode == ABXResponseCodeSuccess) {
-            self.notifications = notifications;
-            [self.tableView reloadData];
-            
-            if (notifications.count == 0) {
-                [self showError:[@"No Notifications" localizedString]];
-            }
-        }
-        else {
-            [self showError:[@"Notifications Error" localizedString]];
-        }
-    }];
+         [self.activityView stopAnimating];
+         if (responseCode == ABXResponseCodeSuccess) {
+             self.notifications = notifications;
+             [self.tableView reloadData];
+
+             if (notifications.count == 0) {
+                 [self showError:[@"No Notifications" localizedString]];
+             }
+         } else {
+             [self showError:[@"Notifications Error" localizedString]];
+         }
+     }];
 }
+
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.notifications.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"NotificationCell";
-    
+
     ABXNotificationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[ABXNotificationTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+
     if (indexPath.row < self.notifications.count) {
         [cell setNotification:self.notifications[indexPath.row]];
     }
-    
+
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row < self.notifications.count) {
         return [ABXNotificationTableViewCell heightForNotification:self.notifications[indexPath.row]
-                                               withWidth:CGRectGetWidth(self.tableView.frame)];
+                                                         withWidth:CGRectGetWidth(self.tableView.frame)];
     }
+
     return 44;
 }
 

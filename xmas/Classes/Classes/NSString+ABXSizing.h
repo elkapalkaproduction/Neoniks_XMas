@@ -10,7 +10,7 @@
 
 @interface NSString (ABXSizing)
 
-- (CGFloat)heightForWidth:(CGFloat)width andFont:(UIFont*)font;
-- (CGFloat)widthToFitFont:(UIFont*)font;
+- (CGFloat)heightForWidth:(CGFloat)width andFont:(UIFont *)font;
+- (CGFloat)widthToFitFont:(UIFont *)font;
 
 @end

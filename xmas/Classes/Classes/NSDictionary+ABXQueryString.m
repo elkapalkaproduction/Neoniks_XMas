@@ -11,17 +11,16 @@
 
 @implementation NSDictionary (ABXQueryString)
 
-- (NSString *)queryStringValue
-{
+- (NSString *)queryStringValue {
     NSMutableArray *pairs = [NSMutableArray array];
-    for (NSString *key in [self keyEnumerator])
-    {
+    for (NSString *key in[self keyEnumerator]) {
         id value = [self objectForKey:key];
         NSString *escapedValue = [value urlEncodedString];
         [pairs addObject:[NSString stringWithFormat:@"%@=%@", key, escapedValue]];
     }
-    
+
     return [pairs componentsJoinedByString:@"&"];
 }
+
 
 @end

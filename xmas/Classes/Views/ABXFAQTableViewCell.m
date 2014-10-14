@@ -21,14 +21,13 @@
 
 @implementation ABXFAQTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.layer.shouldRasterize = YES;
         self.layer.rasterizationScale = [UIScreen mainScreen].scale;
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+
         // Text
         self.questionLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 20, CGRectGetWidth(self.bounds) - 45, 0)];
         self.questionLabel.textColor = [UIColor blackColor];
@@ -36,13 +35,14 @@
         self.questionLabel.numberOfLines = 0;
         [self.contentView addSubview:self.questionLabel];
     }
+
     return self;
 }
 
-- (void)layoutSubviews
-{
+
+- (void)layoutSubviews {
     [super layoutSubviews];
-    
+
     CGRect r = self.questionLabel.frame;
     r.size.height = [_faq.question heightForWidth:CGRectGetWidth(self.bounds) - 45
                                           andFont:[ABXFAQTableViewCell font]];
@@ -50,26 +50,28 @@
     self.questionLabel.frame = r;
 }
 
-- (void)setFAQ:(ABXFaq*)faq
-{
+
+- (void)setFAQ:(ABXFaq *)faq {
     _faq = faq;
     self.questionLabel.text = faq.question;
     [self setNeedsLayout];
 }
 
-+ (UIFont*)font
-{
+
++ (UIFont *)font {
     static dispatch_once_t onceToken;
     static UIFont *font = nil;
     dispatch_once(&onceToken, ^{
-        font = [UIFont systemFontOfSize:15];
-    });
+                      font = [UIFont systemFontOfSize:15];
+                  });
+
     return font;
 }
 
-+ (CGFloat)heightForFAQ:(ABXFaq*)faq withWidth:(CGFloat)width
-{
+
++ (CGFloat)heightForFAQ:(ABXFaq *)faq withWidth:(CGFloat)width {
     return [faq.question heightForWidth:width - 45 andFont:[self font]] + 40;
 }
+
 
 @end

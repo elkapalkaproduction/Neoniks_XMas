@@ -10,11 +10,11 @@
 
 @interface ABXVersionNotificationView : ABXNotificationView
 
-+ (void)fetchAndShowInController:(UIViewController*)controller
-                     foriTunesID:(NSString*)itunesId
-                 backgroundColor:(UIColor*)backgroundColor
-                       textColor:(UIColor*)textColor
-                     buttonColor:(UIColor*)buttonColor
-                        complete:(void(^)(BOOL shown))complete;
++ (void)fetchAndShowInController:(UIViewController *)controller
+                     foriTunesID:(NSString *)itunesId
+                 backgroundColor:(UIColor *)backgroundColor
+                       textColor:(UIColor *)textColor
+                     buttonColor:(UIColor *)buttonColor
+                        complete:(void (^)(BOOL shown))complete;
 
 @end

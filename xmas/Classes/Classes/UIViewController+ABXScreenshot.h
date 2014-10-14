@@ -10,6 +10,6 @@
 
 @interface UIViewController (ABXScreenshot)
 
-- (UIImage*)takeScreenshot;
+- (UIImage *)takeScreenshot;
 
 @end

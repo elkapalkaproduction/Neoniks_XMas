@@ -15,11 +15,11 @@
 @property (nonatomic, copy) NSString *question;
 @property (nonatomic, copy) NSString *answer;
 
-+ (NSURLSessionDataTask*)fetch:(void(^)(NSArray *faqs, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
++ (NSURLSessionDataTask *)fetch:(void (^)(NSArray *faqs, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
-- (NSURLSessionDataTask*)upvote:(void(^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
-- (NSURLSessionDataTask*)downvote:(void(^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
+- (NSURLSessionDataTask *)upvote:(void (^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
+- (NSURLSessionDataTask *)downvote:(void (^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
-- (NSURLSessionDataTask*)recordView:(void(^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
+- (NSURLSessionDataTask *)recordView:(void (^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
 @end

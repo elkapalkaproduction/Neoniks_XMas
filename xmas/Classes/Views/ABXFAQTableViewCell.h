@@ -12,8 +12,8 @@
 
 @interface ABXFAQTableViewCell : UITableViewCell
 
-- (void)setFAQ:(ABXFaq*)faq;
+- (void)setFAQ:(ABXFaq *)faq;
 
-+ (CGFloat)heightForFAQ:(ABXFaq*)faq withWidth:(CGFloat)width;
++ (CGFloat)heightForFAQ:(ABXFaq *)faq withWidth:(CGFloat)width;
 
 @end

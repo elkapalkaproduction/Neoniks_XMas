@@ -14,20 +14,20 @@ typedef void (^ABXNotificationViewCallback)(ABXNotificationView *view);
 
 @interface ABXNotificationView : UIView
 
-+ (ABXNotificationView*)show:(NSString*)text
-                  actionText:(NSString*)actionText
-             backgroundColor:(UIColor*)backgroundColor
-                   textColor:(UIColor*)textColor
-                 buttonColor:(UIColor*)buttonColor
-                inController:(UIViewController*)controller
-                 actionBlock:(ABXNotificationViewCallback)actionBlock
-                dismissBlock:(ABXNotificationViewCallback)dismissBlock;
++ (ABXNotificationView *)show:(NSString *)text
+                   actionText:(NSString *)actionText
+              backgroundColor:(UIColor *)backgroundColor
+                    textColor:(UIColor *)textColor
+                  buttonColor:(UIColor *)buttonColor
+                 inController:(UIViewController *)controller
+                  actionBlock:(ABXNotificationViewCallback)actionBlock
+                 dismissBlock:(ABXNotificationViewCallback)dismissBlock;
 
-+ (void)fetchAndShowInController:(UIViewController*)controller
-                 backgroundColor:(UIColor*)backgroundColor
-                       textColor:(UIColor*)textColor
-                     buttonColor:(UIColor*)buttonColor
-                        complete:(void(^)(BOOL shown))complete;
++ (void)fetchAndShowInController:(UIViewController *)controller
+                 backgroundColor:(UIColor *)backgroundColor
+                       textColor:(UIColor *)textColor
+                     buttonColor:(UIColor *)buttonColor
+                        complete:(void (^)(BOOL shown))complete;
 
 - (void)dismiss;
 

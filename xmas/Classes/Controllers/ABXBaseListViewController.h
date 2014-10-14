@@ -14,8 +14,8 @@
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 @property (nonatomic, strong) UILabel *errorLabel;
 
-+ (void)showFromController:(UIViewController*)controller;
++ (void)showFromController:(UIViewController *)controller;
 
-- (void)showError:(NSString*)error;
+- (void)showError:(NSString *)error;
 
 @end

@@ -11,50 +11,48 @@
 
 @implementation ABXModel
 
-+ (id)createWithAttributes:(NSDictionary*)attributes
-{
++ (id)createWithAttributes:(NSDictionary *)attributes {
     // Virtual
     assert(false);
 }
 
-+ (NSURLSessionDataTask*)fetchList:(NSString*)path
-                            params:(NSDictionary*)params
-                          complete:(void(^)(NSArray *objects, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete
-{
+
++ (NSURLSessionDataTask *)fetchList:(NSString *)path
+                             params:(NSDictionary *)params
+                           complete:(void (^)(NSArray *objects, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete {
     // Generic list fetch
     return [[ABXApiClient instance] GET:path
                                  params:params
                                complete:^(ABXResponseCode responseCode, NSInteger httpCode, NSError *error, id JSON) {
-                                   if (responseCode == ABXResponseCodeSuccess) {
-                                       NSArray *results = [JSON objectForKeyNulled:@"results"];
-                                       if (results && [results isKindOfClass:[NSArray class]]) {
-                                           // Convert into objects
-                                           NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[results count]];
-                                           for (NSDictionary *attrs in results) {
-                                               if ([attrs isKindOfClass:[NSDictionary class]]) {
-                                                   [objects addObject:[self createWithAttributes:attrs]];
-                                               }
-                                           }
-                                           
-                                           // Success!
-                                           if (complete) {
-                                               complete(objects, responseCode, httpCode, error);
-                                           }
-                                       }
-                                       else {
-                                           // Decoding error, pass the values through
-                                           if (complete) {
-                                               complete(nil, ABXResponseCodeErrorDecoding, httpCode, error);
-                                           }
-                                       }
-                                   }
-                                   else {
-                                       // Error, pass the values through
-                                       if (complete) {
-                                           complete(nil, responseCode, httpCode, error);
-                                       }
-                                   }
-                               }];
+                if (responseCode == ABXResponseCodeSuccess) {
+                    NSArray *results = [JSON objectForKeyNulled:@"results"];
+                    if (results && [results isKindOfClass:[NSArray class]]) {
+                        // Convert into objects
+                        NSMutableArray *objects = [NSMutableArray arrayWithCapacity:[results count]];
+                        for (NSDictionary * attrs in results) {
+                            if ([attrs isKindOfClass:[NSDictionary class]]) {
+                                [objects addObject:[self createWithAttributes:attrs]];
+                            }
+                        }
+
+                        // Success!
+                        if (complete) {
+                            complete(objects, responseCode, httpCode, error);
+                        }
+                    } else {
+                        // Decoding error, pass the values through
+                        if (complete) {
+                            complete(nil, ABXResponseCodeErrorDecoding, httpCode, error);
+                        }
+                    }
+                } else {
+                    // Error, pass the values through
+                    if (complete) {
+                        complete(nil, responseCode, httpCode, error);
+                    }
+                }
+            }];
 }
+
 
 @end

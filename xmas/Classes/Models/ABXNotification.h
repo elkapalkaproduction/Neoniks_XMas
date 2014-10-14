@@ -21,8 +21,8 @@
 - (BOOL)hasSeen;
 - (BOOL)hasAction;
 
-+ (NSURLSessionDataTask*)fetchActive:(void(^)(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
++ (NSURLSessionDataTask *)fetchActive:(void (^)(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
-+ (NSURLSessionDataTask*)fetch:(void(^)(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
++ (NSURLSessionDataTask *)fetch:(void (^)(NSArray *notifications, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
 @end

@@ -37,10 +37,8 @@
 
 #import <Security/Security.h>
 
-
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wobjc-missing-property-synthesis"
-
 
 #ifndef APPBOTKEYCHAIN_USE_NSCODING
 #if TARGET_OS_IPHONE
@@ -50,8 +48,7 @@
 #endif
 #endif
 
-
-typedef NS_ENUM(NSInteger, ABXKeychainAccess)
+typedef NS_ENUM (NSInteger, ABXKeychainAccess)
 {
     ABXKeychainAccessibleWhenUnlocked = 0,
     ABXKeychainAccessibleAfterFirstUnlock,
@@ -60,7 +57,6 @@ typedef NS_ENUM(NSInteger, ABXKeychainAccess)
     ABXKeychainAccessibleAfterFirstUnlockThisDeviceOnly,
     ABXKeychainAccessibleAlwaysThisDeviceOnly
 };
-
 
 @interface ABXKeychain : NSObject
 
@@ -84,6 +80,5 @@ typedef NS_ENUM(NSInteger, ABXKeychainAccess)
 - (id)objectForKeyedSubscript:(id)key;
 
 @end
-
 
 #pragma GCC diagnostic pop

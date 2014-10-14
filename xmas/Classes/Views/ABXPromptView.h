@@ -16,10 +16,8 @@
 
 @end
 
-@interface ABXPromptView : UIView
+@interface ABXPromptView : UIViewController
 
-@property (weak) id<ABXPromptViewDelegate> delegate;
-
-+ (BOOL)hasHadInteractionForCurrentVersion;
+@property (weak) id <ABXPromptViewDelegate> delegate;
 
 @end

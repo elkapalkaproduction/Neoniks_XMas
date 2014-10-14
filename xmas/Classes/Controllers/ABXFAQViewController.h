@@ -14,6 +14,6 @@
 @property (nonatomic, strong) ABXFaq *faq;
 @property (nonatomic, assign) BOOL hideContactButton;
 
-+ (void)pushOnNavController:(UINavigationController*)navigationController faq:(ABXFaq*)faq hideContactButton:(BOOL)hideContactButton;
++ (void)pushOnNavController:(UINavigationController *)navigationController faq:(ABXFaq *)faq hideContactButton:(BOOL)hideContactButton;
 
 @end

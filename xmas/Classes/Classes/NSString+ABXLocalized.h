@@ -10,6 +10,6 @@
 
 @interface NSString (ABXLocalized)
 
-- (NSString*)localizedString;
+- (NSString *)localizedString;
 
 @end

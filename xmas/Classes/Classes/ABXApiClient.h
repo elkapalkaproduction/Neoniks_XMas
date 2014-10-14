@@ -22,17 +22,17 @@ typedef void (^ABXRequestCompletion)(ABXResponseCode responseCode, NSInteger htt
 
 @interface ABXApiClient : NSObject
 
-+ (ABXApiClient*)instance;
++ (ABXApiClient *)instance;
 
 + (BOOL)isInternetReachable;
 
 - (void)setApiKey:(NSString *)apiKey;
 
-- (NSURLSessionDataTask*)GET:(NSString*)path params:(NSDictionary*)params complete:(ABXRequestCompletion)complete;
+- (NSURLSessionDataTask *)GET:(NSString *)path params:(NSDictionary *)params complete:(ABXRequestCompletion)complete;
 
-- (NSURLSessionDataTask*)POST:(NSString*)path params:(NSDictionary*)params complete:(ABXRequestCompletion)complete;
-- (NSURLSessionDataTask*)POSTImage:(NSString*)path image:(UIImage*)image complete:(ABXRequestCompletion)complete;
+- (NSURLSessionDataTask *)POST:(NSString *)path params:(NSDictionary *)params complete:(ABXRequestCompletion)complete;
+- (NSURLSessionDataTask *)POSTImage:(NSString *)path image:(UIImage *)image complete:(ABXRequestCompletion)complete;
 
-- (NSURLSessionDataTask*)PUT:(NSString*)path params:(NSDictionary*)params complete:(ABXRequestCompletion)complete;
+- (NSURLSessionDataTask *)PUT:(NSString *)path params:(NSDictionary *)params complete:(ABXRequestCompletion)complete;
 
 @end

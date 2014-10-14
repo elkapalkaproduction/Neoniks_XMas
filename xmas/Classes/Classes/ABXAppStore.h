@@ -9,7 +9,7 @@
 
 @interface ABXAppStore : NSObject
 
-+ (void)openAppStoreReviewForApp:(NSString*)itunesId;
-+ (void)openAppStoreForApp:(NSString*)itunesId;
++ (void)openAppStoreReviewForApp:(NSString *)itunesId;
++ (void)openAppStoreForApp:(NSString *)itunesId;
 
 @end

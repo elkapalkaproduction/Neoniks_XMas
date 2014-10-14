@@ -16,6 +16,6 @@
 
 - (void)setNotification:(ABXNotification *)notification;
 
-+ (CGFloat)heightForNotification:(ABXNotification*)notification withWidth:(CGFloat)width;
++ (CGFloat)heightForNotification:(ABXNotification *)notification withWidth:(CGFloat)width;
 
 @end

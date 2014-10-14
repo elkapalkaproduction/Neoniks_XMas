@@ -9,10 +9,10 @@
 
 @interface ABXIssue : ABXModel
 
-+ (NSURLSessionDataTask*)submit:(NSString*)email
-                       feedback:(NSString*)feedback
-                    attachments:(NSArray*)attachments
-                       metaData:(NSDictionary*)metaData
-                       complete:(void(^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
++ (NSURLSessionDataTask *)submit:(NSString *)email
+                        feedback:(NSString *)feedback
+                     attachments:(NSArray *)attachments
+                        metaData:(NSDictionary *)metaData
+                        complete:(void (^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
 @end

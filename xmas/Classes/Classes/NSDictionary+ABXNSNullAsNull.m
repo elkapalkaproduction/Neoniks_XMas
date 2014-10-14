@@ -9,13 +9,14 @@
 
 @implementation NSDictionary (ABXNSNullAsNull)
 
-- (id)objectForKeyNulled:(id)aKey
-{
+- (id)objectForKeyNulled:(id)aKey {
     id value = [self objectForKey:aKey];
     if (!value || [value isKindOfClass:[NSNull class]]) {
         return nil;
     }
+
     return value;
 }
+
 
 @end

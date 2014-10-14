@@ -18,10 +18,10 @@
 - (void)markAsSeen;
 - (BOOL)hasSeen;
 - (BOOL)isNewerThanCurrent;
-- (void)isLiveVersion:(NSString*)itunesId country:(NSString*)country complete:(void(^)(BOOL matches))complete;
+- (void)isLiveVersion:(NSString *)itunesId country:(NSString *)country complete:(void (^)(BOOL matches))complete;
 
-+ (NSURLSessionDataTask*)fetch:(void(^)(NSArray *versions, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
++ (NSURLSessionDataTask *)fetch:(void (^)(NSArray *versions, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
-+ (NSURLSessionDataTask*)fetchCurrentVersion:(void(^)(ABXVersion *currentVersion, ABXVersion *latestVersion, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
++ (NSURLSessionDataTask *)fetchCurrentVersion:(void (^)(ABXVersion *currentVersion, ABXVersion *latestVersion, ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
 @end

@@ -9,23 +9,25 @@
 
 @implementation NSString (ABXURLEncoding)
 
-- (NSString *)urlEncodedString
-{
+- (NSString *)urlEncodedString {
     CFStringRef ref = CFURLCreateStringByAddingPercentEscapes(NULL,
                                                               (__bridge CFStringRef)self,
                                                               NULL,
                                                               (CFStringRef)@":!*();@/&?#[]+$,='%’\"",
                                                               kCFStringEncodingUTF8);
+
     return (__bridge_transfer NSString *)(ref);
 }
 
-- (NSString *)urlDecodedString
-{
+
+- (NSString *)urlDecodedString {
     CFStringRef ref = CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
                                                                               (__bridge CFStringRef)self,
                                                                               CFSTR(""),
                                                                               kCFStringEncodingUTF8);
+
     return (__bridge_transfer NSString *)(ref);
 }
+
 
 @end

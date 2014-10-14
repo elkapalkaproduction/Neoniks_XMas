@@ -14,6 +14,6 @@
 @property (nonatomic, copy) NSNumber *identifier;
 @property (nonatomic, assign) NSUInteger retries;
 
-- (NSURLSessionDataTask*)upload:(void(^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
+- (NSURLSessionDataTask *)upload:(void (^)(ABXResponseCode responseCode, NSInteger httpCode, NSError *error))complete;
 
 @end

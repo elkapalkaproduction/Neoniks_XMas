@@ -10,7 +10,8 @@
 #import "XMasGoogleAnalitycs.h"
 #import "MenuViewController.h"
 #import "LogoViewController.h"
-#import "AppBoxTManager.h"
+#import "ABX.h"
+
 #ifdef FreeVersion
 #import "AdsManager.h"
 #endif
@@ -30,7 +31,7 @@ NSString *const bookAppID = @"899196882";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [LanguageUtils setupLanguage];
     [XMasGoogleAnalitycs sharedManager];
-    [[AppBoxTManager sharedManager] setupLibrary];
+    [[ABXApiClient instance] setApiKey:@"bc2c1345090cee2262258834db71a1e9417365a7"];
 #ifdef FreeVersion
     [[AdsManager sharedManager] setupAllLibraries];
 #endif

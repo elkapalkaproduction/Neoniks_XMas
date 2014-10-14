@@ -12,14 +12,14 @@
 
 @property (nonatomic, copy) NSString *placeholder;
 
-+ (void)showFromController:(UIViewController*)controller
-               placeholder:(NSString*)placeholder;
++ (void)showFromController:(UIViewController *)controller
+               placeholder:(NSString *)placeholder;
 
-+ (void)showFromController:(UIViewController*)controller
-               placeholder:(NSString*)placeholder
-                     email:(NSString*)email
-                  metaData:(NSDictionary*)metaData
-                     image:(UIImage*)image;
++ (void)showFromController:(UIViewController *)controller
+               placeholder:(NSString *)placeholder
+                     email:(NSString *)email
+                  metaData:(NSDictionary *)metaData
+                     image:(UIImage *)image;
 
 @property (nonatomic, copy) NSString *defaultEmail;
 @property (nonatomic, strong) NSDictionary *metaData;

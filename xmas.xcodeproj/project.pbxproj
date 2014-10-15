@@ -20,6 +20,14 @@
 		457AF4B319E31A2A006B3C6F /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 457AF4A619E31A2A006B3C6F /* Icon-Small@2x.png */; };
 		457AF4B419E31A2A006B3C6F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 457AF4A719E31A2A006B3C6F /* Icon.png */; };
 		457AF4B519E31A2A006B3C6F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 457AF4A819E31A2A006B3C6F /* Icon@2x.png */; };
+		45D60E8119EDC86B00FC86BD /* prompt_yes_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E7D19EDC86B00FC86BD /* prompt_yes_rus.png */; };
+		45D60E8219EDC86B00FC86BD /* prompt_yes_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E7D19EDC86B00FC86BD /* prompt_yes_rus.png */; };
+		45D60E8319EDC86B00FC86BD /* prompt_yes_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E7E19EDC86B00FC86BD /* prompt_yes_eng.png */; };
+		45D60E8419EDC86B00FC86BD /* prompt_yes_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E7E19EDC86B00FC86BD /* prompt_yes_eng.png */; };
+		45D60E8519EDC86B00FC86BD /* prompt_no_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E7F19EDC86B00FC86BD /* prompt_no_rus.png */; };
+		45D60E8619EDC86B00FC86BD /* prompt_no_rus.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E7F19EDC86B00FC86BD /* prompt_no_rus.png */; };
+		45D60E8719EDC86B00FC86BD /* prompt_no_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E8019EDC86B00FC86BD /* prompt_no_eng.png */; };
+		45D60E8819EDC86B00FC86BD /* prompt_no_eng.png in Resources */ = {isa = PBXBuildFile; fileRef = 45D60E8019EDC86B00FC86BD /* prompt_no_eng.png */; };
 		752B70B619DC991C00C649B7 /* ham_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 752B709B19DC991C00C649B7 /* ham_fon.png */; };
 		752B70B719DC991C00C649B7 /* ham_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 752B709C19DC991C00C649B7 /* ham_shadow.png */; };
 		752B70B919DC991C00C649B7 /* toy_1_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 752B709E19DC991C00C649B7 /* toy_1_0.png */; };
@@ -746,6 +754,10 @@
 		4585E97119E8FF3C00C5C6C3 /* TSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSUtils.h; sourceTree = "<group>"; };
 		4585E97219E8FF3C00C5C6C3 /* TSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSUtils.m; sourceTree = "<group>"; };
 		4585E97319E8FF3C00C5C6C3 /* TSWordOfMouthDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSWordOfMouthDelegate.h; sourceTree = "<group>"; };
+		45D60E7D19EDC86B00FC86BD /* prompt_yes_rus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prompt_yes_rus.png; sourceTree = "<group>"; };
+		45D60E7E19EDC86B00FC86BD /* prompt_yes_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prompt_yes_eng.png; sourceTree = "<group>"; };
+		45D60E7F19EDC86B00FC86BD /* prompt_no_rus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prompt_no_rus.png; sourceTree = "<group>"; };
+		45D60E8019EDC86B00FC86BD /* prompt_no_eng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prompt_no_eng.png; sourceTree = "<group>"; };
 		752B709B19DC991C00C649B7 /* ham_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ham_fon.png; sourceTree = "<group>"; };
 		752B709C19DC991C00C649B7 /* ham_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ham_shadow.png; sourceTree = "<group>"; };
 		752B709E19DC991C00C649B7 /* toy_1_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toy_1_0.png; sourceTree = "<group>"; };
@@ -1588,6 +1600,10 @@
 		75AF9D7819EDB4CD0007094F /* AppBotX */ = {
 			isa = PBXGroup;
 			children = (
+				45D60E7D19EDC86B00FC86BD /* prompt_yes_rus.png */,
+				45D60E7E19EDC86B00FC86BD /* prompt_yes_eng.png */,
+				45D60E7F19EDC86B00FC86BD /* prompt_no_rus.png */,
+				45D60E8019EDC86B00FC86BD /* prompt_no_eng.png */,
 				75AF9D7919EDB4CD0007094F /* alert_cloud_left.png */,
 				75AF9D7A19EDB4CD0007094F /* alert_cloud_right.png */,
 				75AF9D7B19EDB4CD0007094F /* alert_love_to_eng.png */,
@@ -2102,6 +2118,7 @@
 				75A8C80F19E99D6A006C7394 /* play_button_take_icon.png in Resources */,
 				75A8C81019E99D6A006C7394 /* game_choice_1_eng.png in Resources */,
 				75A8C81119E99D6A006C7394 /* 1_text_eng.png in Resources */,
+				45D60E8519EDC86B00FC86BD /* prompt_no_rus.png in Resources */,
 				75A8C81219E99D6A006C7394 /* Icon-76@2x.png in Resources */,
 				75A8C81319E99D6A006C7394 /* iphone6_menu_fon.png in Resources */,
 				75AF9D9B19EDB4CD0007094F /* improve_eng.png in Resources */,
@@ -2222,6 +2239,7 @@
 				75A8C88119E99D6A006C7394 /* 2_popup_art.png in Resources */,
 				75A8C88219E99D6A006C7394 /* about_button_feedback_icon.png in Resources */,
 				75A8C88319E99D6A006C7394 /* iphone4_game_fon.png in Resources */,
+				45D60E8719EDC86B00FC86BD /* prompt_no_eng.png in Resources */,
 				75A8C88419E99D6A006C7394 /* doll_falling.mp3 in Resources */,
 				75A8C88519E99D6A006C7394 /* about_button_read_book_eng.png in Resources */,
 				75A8C88619E99D6A006C7394 /* site_eng.png in Resources */,
@@ -2269,6 +2287,7 @@
 				75A8C8AD19E99D6A006C7394 /* card_button_mail_eng.png in Resources */,
 				75A8C8AE19E99D6A006C7394 /* card_button_mail_rus.png in Resources */,
 				75A8C8AF19E99D6A006C7394 /* 0_title_rus.png in Resources */,
+				45D60E8119EDC86B00FC86BD /* prompt_yes_rus.png in Resources */,
 				75A8C8B019E99D6A006C7394 /* game_choice_1_icon.png in Resources */,
 				75A8C8B119E99D6A006C7394 /* 7_title_rus.png in Resources */,
 				75A8C8B219E99D6A006C7394 /* about_button_feedback_rus.png in Resources */,
@@ -2279,6 +2298,7 @@
 				75A8C8B719E99D6A006C7394 /* game_toy_5_0.png in Resources */,
 				75A8C8B819E99D6A006C7394 /* toy_4_0.png in Resources */,
 				75A8C8B919E99D6A006C7394 /* card_button_save_rus.png in Resources */,
+				45D60E8319EDC86B00FC86BD /* prompt_yes_eng.png in Resources */,
 				75A8C8BA19E99D6A006C7394 /* toy_8_1.png in Resources */,
 				75A8C8BB19E99D6A006C7394 /* game_choice_5_icon.png in Resources */,
 				75A8C8BC19E99D6A006C7394 /* 6_title_rus.png in Resources */,
@@ -2371,6 +2391,7 @@
 				75B676FD19D7285700E9275A /* play_button_take_icon.png in Resources */,
 				75B6772119D73D4600E9275A /* game_choice_1_eng.png in Resources */,
 				7537055B19D82FD1008FAB38 /* 1_text_eng.png in Resources */,
+				45D60E8619EDC86B00FC86BD /* prompt_no_rus.png in Resources */,
 				457AF4B119E31A2A006B3C6F /* Icon-76@2x.png in Resources */,
 				75FFFB0A19D5E91100CD310C /* iphone6_menu_fon.png in Resources */,
 				75AF9D9C19EDB4CD0007094F /* improve_eng.png in Resources */,
@@ -2491,6 +2512,7 @@
 				7537054F19D82FD1008FAB38 /* 2_popup_art.png in Resources */,
 				75B676C919D6C7F300E9275A /* about_button_feedback_icon.png in Resources */,
 				75B676EA19D7267800E9275A /* iphone4_game_fon.png in Resources */,
+				45D60E8819EDC86B00FC86BD /* prompt_no_eng.png in Resources */,
 				7544F40D19E7109A0085CBD8 /* doll_falling.mp3 in Resources */,
 				75B676C519D6C7F300E9275A /* about_button_read_book_eng.png in Resources */,
 				75B2C59E19D87D1D0061C617 /* site_eng.png in Resources */,
@@ -2538,6 +2560,7 @@
 				75B6778A19D7676C00E9275A /* card_button_mail_eng.png in Resources */,
 				75B6778C19D7676C00E9275A /* card_button_mail_rus.png in Resources */,
 				7537053E19D82FD1008FAB38 /* 0_title_rus.png in Resources */,
+				45D60E8219EDC86B00FC86BD /* prompt_yes_rus.png in Resources */,
 				75B6772219D73D4600E9275A /* game_choice_1_icon.png in Resources */,
 				7537054C19D82FD1008FAB38 /* 7_title_rus.png in Resources */,
 				75B676C119D6C7F300E9275A /* about_button_feedback_rus.png in Resources */,
@@ -2548,6 +2571,7 @@
 				75A70DA219DF1D8200ED47FE /* game_toy_5_0.png in Resources */,
 				752B70C219DC991C00C649B7 /* toy_4_0.png in Resources */,
 				75B6778F19D7676C00E9275A /* card_button_save_rus.png in Resources */,
+				45D60E8419EDC86B00FC86BD /* prompt_yes_eng.png in Resources */,
 				752B70CF19DC991C00C649B7 /* toy_8_1.png in Resources */,
 				75B6772E19D73D4600E9275A /* game_choice_5_icon.png in Resources */,
 				7537054A19D82FD1008FAB38 /* 6_title_rus.png in Resources */,

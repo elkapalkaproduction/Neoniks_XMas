@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>xmasFree.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>75A8C7B019E99D6A006C7394</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>75FFFAA519D5DC3500CD310C</key>
 		<dict>
 			<key>primary</key>

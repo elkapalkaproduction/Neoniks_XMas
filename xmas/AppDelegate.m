@@ -31,9 +31,11 @@ NSString *const bookAppID = @"899196882";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [LanguageUtils setupLanguage];
     [XMasGoogleAnalitycs sharedManager];
-    [[ABXApiClient instance] setApiKey:@"bc2c1345090cee2262258834db71a1e9417365a7"];
 #ifdef FreeVersion
+    [[ABXApiClient instance] setApiKey:@"4032c9dec97ddfe4dbfa59759476b332c042e486"];
     [[AdsManager sharedManager] setupAllLibraries];
+#else
+    [[ABXApiClient instance] setApiKey:@"b340d70c56709abe373b9a90ce25d2a10a745d61"];
 #endif
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

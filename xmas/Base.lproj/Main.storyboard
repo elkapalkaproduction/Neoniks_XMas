@@ -240,7 +240,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-FQ-6yV">
-                                <rect key="frame" x="225" y="257" width="250" height="51"/>
+                                <rect key="frame" x="225" y="237" width="250" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Cb9-y8-olN">
                                         <variation key="heightClass=regular-widthClass=compact" constant="130"/>
@@ -252,7 +252,7 @@
                                 </state>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpA-uM-j3M">
-                                <rect key="frame" x="98" y="359" width="404" height="170"/>
+                                <rect key="frame" x="99" y="359" width="403" height="170"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="gpA-uM-j3M" secondAttribute="height" multiplier="516:217" id="oKe-70-7WG"/>
@@ -288,8 +288,8 @@
                             <constraint firstAttribute="trailing" secondItem="8bg-7h-dxe" secondAttribute="trailing" id="clt-po-g6B"/>
                             <constraint firstItem="EJR-Ai-Qjj" firstAttribute="top" secondItem="8bg-7h-dxe" secondAttribute="bottom" constant="10" id="h9V-fg-f2C"/>
                             <constraint firstItem="8bg-7h-dxe" firstAttribute="leading" secondItem="QBy-tQ-At6" secondAttribute="leading" id="noe-K8-8zI"/>
-                            <constraint firstItem="CU6-FQ-6yV" firstAttribute="bottom" secondItem="EJR-Ai-Qjj" secondAttribute="bottom" constant="10" id="qZN-cs-iLZ">
-                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                            <constraint firstItem="CU6-FQ-6yV" firstAttribute="bottom" secondItem="EJR-Ai-Qjj" secondAttribute="bottom" constant="-10" id="qZN-cs-iLZ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-3"/>
                             </constraint>
                             <constraint firstItem="EJR-Ai-Qjj" firstAttribute="leading" secondItem="QBy-tQ-At6" secondAttribute="leading" constant="25" id="sEd-V9-T4H"/>
                             <constraint firstItem="c5y-QR-hlB" firstAttribute="top" secondItem="YBH-lZ-661" secondAttribute="bottom" constant="15" id="vUR-tN-VeL"/>
@@ -456,7 +456,7 @@
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-ap-wTJ">
-                                <rect key="frame" x="51" y="6" width="109" height="38"/>
+                                <rect key="frame" x="51" y="7" width="109" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fA1-ap-wTJ" secondAttribute="height" multiplier="93:32" id="S92-f7-bms"/>
                                 </constraints>
@@ -766,7 +766,7 @@
                                         </state>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_choice_1_eng.png" translatesAutoresizingMaskIntoConstraints="NO" id="lLM-8f-YmC">
-                                        <rect key="frame" x="17" y="88" width="51" height="15"/>
+                                        <rect key="frame" x="17" y="89" width="51" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="lLM-8f-YmC" secondAttribute="height" multiplier="236:69" id="GsP-rl-XIS"/>
                                         </constraints>
@@ -776,7 +776,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nnY-kp-ufx" secondAttribute="height" multiplier="85:103" id="8Dj-Up-3CX"/>
                                     <constraint firstAttribute="centerX" secondItem="lLM-8f-YmC" secondAttribute="centerX" id="EaJ-dO-368"/>
-                                    <constraint firstAttribute="bottom" secondItem="lLM-8f-YmC" secondAttribute="bottom" id="Ggs-8O-mO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="lLM-8f-YmC" secondAttribute="bottom" constant="-1" id="Ggs-8O-mO2"/>
                                     <constraint firstItem="aRK-9S-dRv" firstAttribute="leading" secondItem="nnY-kp-ufx" secondAttribute="leading" id="QXa-yy-YJ4"/>
                                     <constraint firstItem="aRK-9S-dRv" firstAttribute="top" secondItem="nnY-kp-ufx" secondAttribute="top" id="kXH-1P-A5H"/>
                                     <constraint firstItem="lLM-8f-YmC" firstAttribute="width" secondItem="aRK-9S-dRv" secondAttribute="width" multiplier="153:255" id="mdV-vd-uSQ"/>
@@ -1510,11 +1510,11 @@
                         <viewControllerLayoutGuide type="bottom" id="ruG-dk-58a"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FNz-XO-CnH">
-                        <rect key="frame" x="0.0" y="0.0" width="404" height="170"/>
+                        <rect key="frame" x="0.0" y="0.0" width="403" height="170"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-cC-ejq">
-                                <rect key="frame" x="0.0" y="0.0" width="404" height="69"/>
+                                <rect key="frame" x="0.0" y="0.0" width="403" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jCf-cC-ejq" secondAttribute="height" multiplier="129:22" id="HuA-Y7-rnB"/>
                                 </constraints>
@@ -1529,7 +1529,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4r-ye-XdW">
-                                <rect key="frame" x="218" y="69" width="186" height="101"/>
+                                <rect key="frame" x="217" y="69" width="186" height="101"/>
                                 <state key="normal" backgroundImage="alert_cloud_right.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

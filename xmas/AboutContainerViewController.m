@@ -71,9 +71,9 @@
     MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
     mailCont.mailComposeDelegate = self;
     if ([LanguageUtils isRussian]) {
-        [mailCont setSubject:@"Отзыв на Неоники и Хэллоуин"];
+        [mailCont setSubject:@"Отзыв на Неоники и Новогодняя Ёлка"];
     } else {
-        [mailCont setSubject:@"Feedback on Neoniks Halloween"];
+        [mailCont setSubject:@"Feedback on Neoniks XMas Tree"];
     }
     [mailCont setToRecipients:[NSArray arrayWithObject:@"info@neoniks.com"]];
     [mailCont setMessageBody:@"" isHTML:NO];

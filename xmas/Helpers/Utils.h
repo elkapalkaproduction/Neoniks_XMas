@@ -18,3 +18,4 @@
 
 extern NSString *const xmasAppID;
 extern NSString *const bookAppID;
+extern NSString *const xmasPaidAppID;

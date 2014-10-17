@@ -50,7 +50,11 @@
         MFMailComposeViewController *mailCont = [self createMailCompose];
         [self presentViewController:mailCont animated:YES completion:NULL];
     } else {
+        #ifdef FreeVersion
         NSURL *bookUrl = [NSURL openStoreToAppWithID:xmasAppID];
+        #else
+        NSURL *bookUrl = [NSURL openStoreToAppWithID:xmasPaidAppID];
+        #endif
         [[UIApplication sharedApplication] openURL:bookUrl];
     }
 }

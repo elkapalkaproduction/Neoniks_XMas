@@ -67,7 +67,11 @@
 
 - (void)appbotPromptForReview
 {
+    #ifdef FreeVersion
     [ABXAppStore openAppStoreReviewForApp:xmasAppID];
+    #else
+    [ABXAppStore openAppStoreReviewForApp:xmasPaidAppID];
+    #endif
     self.promptView.view.hidden = YES;
 }
 

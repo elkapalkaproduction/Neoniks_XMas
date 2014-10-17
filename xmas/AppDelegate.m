@@ -16,7 +16,8 @@
 #import "AdsManager.h"
 #endif
 
-NSString *const xmasAppID = @"918984559";
+NSString *const xmasAppID = @"928804072";
+NSString *const xmasPaidAppID = @"918984559";
 NSString *const bookAppID = @"899196882";
 
 @interface AppDelegate ()

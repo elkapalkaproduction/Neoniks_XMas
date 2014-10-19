@@ -11,6 +11,7 @@
 @protocol HamDelegate <NSObject>
 
 - (void)pressedToyWithID:(NSString *)toyID;
+- (void)draggedToyWithID:(NSString *)toyID position:(CGPoint)position end:(BOOL)end;
 
 @end
 

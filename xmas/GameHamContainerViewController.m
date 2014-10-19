@@ -103,11 +103,40 @@
 }
 
 
+- (void)dragging:(NSInteger)idx position:(CGPoint)point end:(BOOL)end {
+    NSString *toyID = [self toyForCharacter:self.character imageNumber:idx];
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen
+                                                       action:GAnalitycsPlayXmasToy
+                                                        label:toyID
+                                                        value:[LanguageUtils currentValue]];
+    
+    [self.delegate draggedToyWithID:toyID position:point end:end];
+}
+
+- (void)toyDragged0:(UIGestureRecognizer *)sender {
+    [self dragging:0 position:[sender locationInView:self.parentViewController.view] end:sender.state == UIGestureRecognizerStateEnded];
+
+}
+
+
+- (void)toyDragged1:(UIGestureRecognizer *)sender {
+    [self dragging:1 position:[sender locationInView:self.parentViewController.view] end:sender.state == UIGestureRecognizerStateEnded];
+}
+
+- (void)toyDragged2:(UIGestureRecognizer *)sender {
+    [self dragging:2 position:[sender locationInView:self.parentViewController.view] end:sender.state == UIGestureRecognizerStateEnded];
+}
+
+
+
 - (void)setupToys {
     [self.toys enumerateObjectsUsingBlock:^(NNKShapedButton *toy, NSUInteger idx, BOOL *stop) {
         NSString *imageName = [self toyForCharacter:self.character imageNumber:idx];
         toy.image = [UIImage imageWithLocalizedName:imageName];
         [toy addTarget:self action:@selector(toyPressed:) forControlEvents:UIControlEventTouchUpInside];
+        SEL selector = NSSelectorFromString([NSString stringWithFormat:@"toyDragged%d:", idx]);
+        UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:selector];
+        [toy addGestureRecognizer:panGesture];
         [toy addTarget:[SoundPlayer sharedPlayer] action:@selector(playSoundWithName:) forControlEvents:UIControlEventTouchUpInside];
     }];
 }

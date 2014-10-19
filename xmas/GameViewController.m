@@ -193,6 +193,22 @@ NSString *const pathToPlist = @"toys_scalable";
 }
 
 
+- (void)draggedToyWithID:(NSString *)toyID position:(CGPoint)position end:(BOOL)end {
+    if (self.currentObject) {
+        [self.currentObject cleanResources];
+    }
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfURL:[NSURL urlFromLocalizedName:pathToPlist extension:@"plist"]];
+    NNKObjectParameters *params = [[NNKObjectParameters alloc] initWithDictionary:dict[toyID]];
+    params.frame = CGRectMake(position.x - params.frame.size.width / 2, position.y - params.frame.size.height / 2, params.frame.size.width, params.frame.size.height);
+    self.currentObject = [[StatedObject alloc] initWithParameters:params delegate:self];
+    if (end) {
+        [self.currentObject performActions];
+        [self objectInteracted:self.currentObject];
+    }
+}
+
+
 #pragma mark - StatedObjectDelegate
 
 - (void)objectInteracted:(StatedObject *)object {

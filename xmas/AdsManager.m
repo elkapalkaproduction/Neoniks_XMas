@@ -10,10 +10,15 @@
 #import "TSTapstream.h"
 #import <Chartboost/Chartboost.h>
 #import "SoundPlayer.h"
+#import <StartApp/StartApp.h>
 
 NSString *const TAP_STREAM_KEY = @"c_9ek3--RY-PeLND6eR4_Q";
 NSString *const CHARTBOOST_APP_ID = @"54377f15c26ee43451b3fcf0";
 NSString *const CHARTBOOST_APP_SIGNATURE = @"5f8be4653b7088a82759825449103baff5ca8fe3";
+
+NSString *const START_APP_DEVELOPER_KEY = @"105068540";
+NSString *const START_APP_APP_KEY = @"210300540";
+
 
 @interface AdsManager () <ChartboostDelegate>
 
@@ -34,10 +39,16 @@ NSString *const CHARTBOOST_APP_SIGNATURE = @"5f8be4653b7088a82759825449103baff5c
     return sharedMyManager;
 }
 
-
+- (void)showSplashAd {
+    [[STAStartAppSDK sharedInstance] showSplashAd];
+}
 
 - (void)setupAllLibraries {
     // Tapstream SDK
+    STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
+    sdk.appID = START_APP_APP_KEY;
+    sdk.devID = START_APP_DEVELOPER_KEY;
+    
     TSConfig *config = [TSConfig configWithDefaults];
     [TSTapstream createWithAccountName:@"neoniks" developerSecret:TAP_STREAM_KEY config:config];
     [Chartboost startWithAppId:CHARTBOOST_APP_ID

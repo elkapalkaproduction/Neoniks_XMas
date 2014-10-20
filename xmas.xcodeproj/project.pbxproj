@@ -655,6 +655,12 @@
 		75B6779419D77A1800E9275A /* blue_transparent_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 75B6779319D77A1800E9275A /* blue_transparent_background.png */; };
 		75B6779519D7813400E9275A /* CaptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B6775519D75E6A00E9275A /* CaptionsViewController.m */; };
 		75D6C21D19E1D0A1005FB177 /* toys_scalable.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */; };
+		75E4B69A19F4D510001C522C /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 75E4B69819F4D510001C522C /* StartApp.bundle */; };
+		75E4B69B19F4D510001C522C /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E4B69919F4D510001C522C /* StartApp.framework */; };
+		75E4B69D19F4D580001C522C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E4B69C19F4D580001C522C /* CoreTelephony.framework */; };
+		75E4B69F19F4D58C001C522C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E4B69E19F4D58C001C522C /* StoreKit.framework */; };
+		75E4B6A119F4D595001C522C /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E4B6A019F4D595001C522C /* AdSupport.framework */; };
+		75E4B6A319F4D5A2001C522C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75E4B6A219F4D5A2001C522C /* QuartzCore.framework */; };
 		75F3E02119E3132C0083D9AB /* ipad_tree_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F3E01E19E3132C0083D9AB /* ipad_tree_fon.png */; };
 		75F3E02219E3132C0083D9AB /* iphone4_tree_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F3E01F19E3132C0083D9AB /* iphone4_tree_fon.png */; };
 		75F3E02319E3132C0083D9AB /* iphone6_tree_fon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F3E02019E3132C0083D9AB /* iphone6_tree_fon.png */; };
@@ -1110,6 +1116,12 @@
 		75B6779119D768F300E9275A /* MakeACardContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeACardContainerViewController.m; sourceTree = "<group>"; };
 		75B6779319D77A1800E9275A /* blue_transparent_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_transparent_background.png; sourceTree = "<group>"; };
 		75D6C21C19E1D0A1005FB177 /* toys_scalable.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = toys_scalable.plist; sourceTree = "<group>"; };
+		75E4B69819F4D510001C522C /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		75E4B69919F4D510001C522C /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
+		75E4B69C19F4D580001C522C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		75E4B69E19F4D58C001C522C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		75E4B6A019F4D595001C522C /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		75E4B6A219F4D5A2001C522C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		75F3E01E19E3132C0083D9AB /* ipad_tree_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ipad_tree_fon.png; sourceTree = "<group>"; };
 		75F3E01F19E3132C0083D9AB /* iphone4_tree_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone4_tree_fon.png; sourceTree = "<group>"; };
 		75F3E02019E3132C0083D9AB /* iphone6_tree_fon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone6_tree_fon.png; sourceTree = "<group>"; };
@@ -1176,9 +1188,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E4B6A319F4D5A2001C522C /* QuartzCore.framework in Frameworks */,
+				75E4B6A119F4D595001C522C /* AdSupport.framework in Frameworks */,
+				75E4B69F19F4D58C001C522C /* StoreKit.framework in Frameworks */,
+				75E4B69D19F4D580001C522C /* CoreTelephony.framework in Frameworks */,
 				75A8C7D719E99D6A006C7394 /* SystemConfiguration.framework in Frameworks */,
 				75A8C7D819E99D6A006C7394 /* libz.dylib in Frameworks */,
 				75A8C7D919E99D6A006C7394 /* CoreData.framework in Frameworks */,
+				75E4B69B19F4D510001C522C /* StartApp.framework in Frameworks */,
 				757EEB7619E99FD4002D49C4 /* Chartboost.framework in Frameworks */,
 				75A8C7DA19E99D6A006C7394 /* Foundation.framework in Frameworks */,
 				75A8C7DB19E99D6A006C7394 /* CoreGraphics.framework in Frameworks */,
@@ -1458,6 +1475,8 @@
 		757EEBE119E9A0D1002D49C4 /* Ads */ = {
 			isa = PBXGroup;
 			children = (
+				75E4B69819F4D510001C522C /* StartApp.bundle */,
+				75E4B69919F4D510001C522C /* StartApp.framework */,
 				75AF9D7819EDB4CD0007094F /* AppBotX */,
 				757EEBE319E9A53B002D49C4 /* Classes */,
 				4585E95519E8FF3C00C5C6C3 /* Tapstream */,
@@ -1922,6 +1941,10 @@
 		75FFFAE719D5E34E00CD310C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75E4B6A219F4D5A2001C522C /* QuartzCore.framework */,
+				75E4B6A019F4D595001C522C /* AdSupport.framework */,
+				75E4B69E19F4D58C001C522C /* StoreKit.framework */,
+				75E4B69C19F4D580001C522C /* CoreTelephony.framework */,
 				754F2C2319E47F4B008EA274 /* SystemConfiguration.framework */,
 				754F2C2119E47F1F008EA274 /* CFNetwork.framework */,
 				754F2C1F19E47F0F008EA274 /* libz.dylib */,
@@ -2189,6 +2212,7 @@
 				75A8C85019E99D6A006C7394 /* iphone6_how_to_fon_eng.jpg in Resources */,
 				75A8C85119E99D6A006C7394 /* 5_text_rus.png in Resources */,
 				75A8C85219E99D6A006C7394 /* menu_button_about_eng.png in Resources */,
+				75E4B69A19F4D510001C522C /* StartApp.bundle in Resources */,
 				75A8C85319E99D6A006C7394 /* game_choice_2_eng.png in Resources */,
 				75A8C85419E99D6A006C7394 /* game_choice_1_rus.png in Resources */,
 				75A8C85519E99D6A006C7394 /* fon_white.png in Resources */,

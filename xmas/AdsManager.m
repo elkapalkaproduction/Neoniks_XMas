@@ -20,10 +20,10 @@ NSString *const START_APP_DEVELOPER_KEY = @"105068540";
 NSString *const START_APP_APP_KEY = @"210300540";
 
 
-@interface AdsManager () <ChartboostDelegate>
+@interface AdsManager () <ChartboostDelegate, STADelegateProtocol>
 
 @property (assign, nonatomic) BOOL isPlayingMusic;
-
+@property (strong, nonatomic) STAStartAppAd *appAd;
 @end
 
 @implementation AdsManager
@@ -39,8 +39,17 @@ NSString *const START_APP_APP_KEY = @"210300540";
     return sharedMyManager;
 }
 
+- (STAStartAppAd *)appAd {
+    if (!_appAd) {
+        _appAd = [[STAStartAppAd alloc] init];
+    }
+    
+    return _appAd;
+}
+
+
 - (void)showSplashAd {
-    [[STAStartAppSDK sharedInstance] showSplashAd];
+    [self.appAd showAd];
 }
 
 - (void)setupAllLibraries {
@@ -48,7 +57,7 @@ NSString *const START_APP_APP_KEY = @"210300540";
     STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
     sdk.appID = START_APP_APP_KEY;
     sdk.devID = START_APP_DEVELOPER_KEY;
-    
+    [self.appAd loadAdWithDelegate:self];
     TSConfig *config = [TSConfig configWithDefaults];
     [TSTapstream createWithAccountName:@"neoniks" developerSecret:TAP_STREAM_KEY config:config];
     [Chartboost startWithAppId:CHARTBOOST_APP_ID
@@ -64,6 +73,7 @@ NSString *const START_APP_APP_KEY = @"210300540";
 
 - (void)playVideos {
     [Chartboost showInterstitial:CBLocationHomeScreen];
+    [self showSplashAd];
 }
 
 - (void)didDismissInterstitial:(CBLocation)location {
@@ -77,6 +87,16 @@ NSString *const START_APP_APP_KEY = @"210300540";
     [[SoundPlayer sharedPlayer] pauseBackgroundMusic];
 }
 
+- (void)didShowAd:(STAAbstractAd *)ad {
+    self.isPlayingMusic = [[SoundPlayer sharedPlayer] isPlayingBackgroundMusic];
+    [[SoundPlayer sharedPlayer] pauseBackgroundMusic];
+}
 
+
+- (void)didCloseAd:(STAAbstractAd *)ad {
+    if (self.isPlayingMusic) {
+        [[SoundPlayer sharedPlayer] playBakgroundMusic];
+    }
+}
 
 @end

@@ -14,6 +14,5 @@
 
 - (void)setupAllLibraries;
 - (void)showStartVideo;
-- (void)showSplashAd;
 
 @end

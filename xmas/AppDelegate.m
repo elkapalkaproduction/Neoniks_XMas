@@ -48,9 +48,6 @@ NSString *const bookAppID = @"899196882";
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];    // Override point for customization after application launch.
     
-#ifdef FreeVersion
-    [[AdsManager sharedManager] showSplashAd];
-#endif
     // Override point for customization after application launch.
     return YES;
 }

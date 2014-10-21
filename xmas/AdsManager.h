@@ -14,5 +14,6 @@
 
 - (void)setupAllLibraries;
 - (void)showStartVideo;
+- (void)chartboostShowMoreApps;
 
 @end

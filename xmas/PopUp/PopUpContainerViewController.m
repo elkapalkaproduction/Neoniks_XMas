@@ -30,9 +30,7 @@
 }
 
 
-- (void)readTheBook {
-    NSInteger pageToShow =  ((PopUpViewController *)self.parentViewController).curentPage;
-    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReadBook label:[@(pageToShow + 1) stringValue] value:[LanguageUtils currentValue]];
+- (void)readTheBookParentGate {
     NSURL *bookAppUrl = [NSURL URLWithString:NeoniksBookLink];
     if ([[UIApplication sharedApplication] canOpenURL:bookAppUrl]) {
         [[UIApplication sharedApplication] openURL:bookAppUrl];
@@ -40,6 +38,20 @@
         NSURL *bookUrl = [NSURL openStoreToAppWithID:bookAppID];
         [[UIApplication sharedApplication] openURL:bookUrl];
     }
+}
+
+- (void)readTheBook {
+    NSInteger pageToShow =  ((PopUpViewController *)self.parentViewController).curentPage;
+    [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsPlayReadBook label:[@(pageToShow + 1) stringValue] value:[LanguageUtils currentValue]];
+#ifdef FreeVersion
+    [self readTheBookParentGate];
+#else
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [self readTheBookParentGate];
+        }
+    }];
+#endif
 }
 
 

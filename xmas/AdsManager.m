@@ -101,4 +101,9 @@ NSString *const START_APP_APP_KEY = @"210300540";
     [self.appAd loadAdWithDelegate:self];
 }
 
+
+- (void)chartboostShowMoreApps {
+    [Chartboost showMoreApps:CBLocationMainMenu];
+}
+
 @end

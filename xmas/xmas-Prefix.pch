@@ -15,5 +15,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 #import "Utils.h"
-
+#ifndef FreeVersion
+#import <floopsdk/floopsdk.h>
+#endif
 #endif

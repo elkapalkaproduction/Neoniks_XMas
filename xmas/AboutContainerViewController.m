@@ -33,7 +33,7 @@
 
 #pragma mark - Actions
 
-- (void)goToReadBook {
+- (void)goToReadBookParentGate {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
     NSURL *bookAppUrl = [NSURL URLWithString:NeoniksBookLink];
     if ([[UIApplication sharedApplication] canOpenURL:bookAppUrl]) {
@@ -42,6 +42,18 @@
         NSURL *bookUrl = [NSURL openStoreToAppWithID:bookAppID];
         [[UIApplication sharedApplication] openURL:bookUrl];
     }
+}
+
+- (void)goToReadBook {
+#ifdef FreeVersion
+    [self goToReadBookParentGate];
+#else
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [self goToReadBookParentGate];
+        }
+    }];
+#endif
 }
 
 
@@ -55,7 +67,16 @@
         #else
         NSURL *bookUrl = [NSURL openStoreToAppWithID:xmasPaidAppID];
         #endif
+#ifdef FreeVersion
         [[UIApplication sharedApplication] openURL:bookUrl];
+#else
+        [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+            if (success) {
+                [[UIApplication sharedApplication] openURL:bookUrl];
+            }
+        }];
+#endif
+
     }
 }
 

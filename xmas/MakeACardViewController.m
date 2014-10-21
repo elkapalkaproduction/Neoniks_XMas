@@ -49,7 +49,15 @@
 
 - (void)goToSite {
     NSURL *siteUrl = [NSURL urlForSite];
+#ifdef FreeVersion
     [[UIApplication sharedApplication] openURL:siteUrl];
+#else
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [[UIApplication sharedApplication] openURL:siteUrl];
+        }
+    }];
+#endif
 }
 
 

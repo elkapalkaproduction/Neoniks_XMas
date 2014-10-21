@@ -36,6 +36,7 @@ NSString *const bookAppID = @"899196882";
     [[ABXApiClient instance] setApiKey:@"4032c9dec97ddfe4dbfa59759476b332c042e486"];
     [[AdsManager sharedManager] setupAllLibraries];
 #else
+    [[FloopSdkManager sharedInstance] startWithAppKey:@"17ef2aad77f1d417bb500d4469eb4bd6"];
     [[ABXApiClient instance] setApiKey:@"b340d70c56709abe373b9a90ce25d2a10a745d61"];
 #endif
 

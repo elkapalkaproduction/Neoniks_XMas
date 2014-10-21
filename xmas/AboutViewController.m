@@ -52,7 +52,15 @@
 - (void)openSite {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL urlForSite];
+#ifdef FreeVersion
     [[UIApplication sharedApplication] openURL:bookUrl];
+#else
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [[UIApplication sharedApplication] openURL:bookUrl];
+        }
+    }];
+#endif
 }
 
 
@@ -67,11 +75,11 @@
 
 - (void)appbotPromptForReview
 {
-    #ifdef FreeVersion
+#ifdef FreeVersion
     [ABXAppStore openAppStoreReviewForApp:xmasAppID];
-    #else
+#else
     [ABXAppStore openAppStoreReviewForApp:xmasPaidAppID];
-    #endif
+#endif
     self.promptView.view.hidden = YES;
 }
 

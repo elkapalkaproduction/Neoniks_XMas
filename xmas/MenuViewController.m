@@ -91,7 +91,15 @@
 - (void)openSite {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL urlForSite];
+#ifdef FreeVersion
     [[UIApplication sharedApplication] openURL:bookUrl];
+#else
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [[UIApplication sharedApplication] openURL:bookUrl];
+        }
+    }];
+#endif
 }
 
 

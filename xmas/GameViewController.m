@@ -61,7 +61,15 @@ NSString *const pathToPlist = @"toys_scalable";
 - (void)openSite {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryPlayScreen action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL urlForSite];
+#ifdef FreeVersion
     [[UIApplication sharedApplication] openURL:bookUrl];
+#else
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [[UIApplication sharedApplication] openURL:bookUrl];
+        }
+    }];
+#endif
 }
 
 

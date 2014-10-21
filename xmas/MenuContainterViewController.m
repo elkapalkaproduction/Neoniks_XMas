@@ -10,7 +10,10 @@
 #import "AboutViewController.h"
 #import "HowToViewController.h"
 #import "XMasGoogleAnalitycs.h"
-
+#ifdef FreeVersion
+#import "AdsManager.h"
+#else
+#endif
 @interface MenuContainterViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *aboutButton;
@@ -19,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *howToIcon;
 @property (weak, nonatomic) IBOutlet UIButton *rateUsButton;
 @property (weak, nonatomic) IBOutlet UIButton *rateUsIcon;
+@property (weak, nonatomic) IBOutlet UIButton *moreIcon;
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
 
 @end
 
@@ -34,6 +39,8 @@
     [self.howToIcon    addTarget:self onTouchUpInsideWithAction:@selector(goToHowTo)];
     [self.rateUsButton addTarget:self onTouchUpInsideWithAction:@selector(goToRateUs)];
     [self.rateUsIcon   addTarget:self onTouchUpInsideWithAction:@selector(goToRateUs)];
+    [self.moreIcon     addTarget:self onTouchUpInsideWithAction:@selector(moreApps)];
+    [self.moreButton   addTarget:self onTouchUpInsideWithAction:@selector(moreApps)];
 }
 
 
@@ -54,7 +61,24 @@
 - (void)goToRateUs {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageRateUs label:nil value:[LanguageUtils currentValue]];
     NSURL *bookUrl = [NSURL openStoreToAppWithID:bookAppID];
+#ifdef FreeVersion
     [[UIApplication sharedApplication] openURL:bookUrl];
+#else
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [[UIApplication sharedApplication] openURL:bookUrl];
+        }
+    }];
+#endif
+}
+
+
+- (void)moreApps {
+#ifdef FreeVersion
+    [[AdsManager sharedManager] chartboostShowMoreApps];
+#else
+    [[FloopSdkManager sharedInstance] showCrossPromotionPageWithName:nil completion:nil];
+#endif
 }
 
 
@@ -64,6 +88,7 @@
     self.aboutButton.image = [UIImage imageWithUnlocalizedName:@"menu_button_about"];
     self.howToButton.image = [UIImage imageWithUnlocalizedName:@"menu_button_how_to"];
     self.rateUsButton.image = [UIImage imageWithUnlocalizedName:@"menu_button_rate_us"];
+    self.moreButton.image = [UIImage imageWithUnlocalizedName:@"more_games"];
 }
 
 @end

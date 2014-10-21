@@ -97,6 +97,8 @@ NSString *const START_APP_APP_KEY = @"210300540";
     if (self.isPlayingMusic) {
         [[SoundPlayer sharedPlayer] playBakgroundMusic];
     }
+    self.appAd = nil;
+    [self.appAd loadAdWithDelegate:self];
 }
 
 @end

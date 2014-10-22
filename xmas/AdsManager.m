@@ -63,6 +63,7 @@ NSString *const START_APP_APP_KEY = @"210300540";
     [Chartboost startWithAppId:CHARTBOOST_APP_ID
                   appSignature:CHARTBOOST_APP_SIGNATURE
                       delegate:self];
+    [Chartboost cacheMoreApps:CBLocationHomeScreen];
 
 }
 

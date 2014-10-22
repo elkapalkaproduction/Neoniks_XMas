@@ -60,10 +60,11 @@
 
 - (void)goToRateUs {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryMainPage action:GAnalitycsMainPageRateUs label:nil value:[LanguageUtils currentValue]];
-    NSURL *bookUrl = [NSURL openStoreToAppWithID:bookAppID];
 #ifdef FreeVersion
+    NSURL *bookUrl = [NSURL openStoreToAppWithID:xmasAppID];
     [[UIApplication sharedApplication] openURL:bookUrl];
 #else
+     NSURL *bookUrl = [NSURL openStoreToAppWithID:xmasPaidAppID];
     [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
         if (success) {
             [[UIApplication sharedApplication] openURL:bookUrl];

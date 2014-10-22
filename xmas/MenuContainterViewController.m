@@ -77,7 +77,11 @@
 #ifdef FreeVersion
     [[AdsManager sharedManager] chartboostShowMoreApps];
 #else
-    [[FloopSdkManager sharedInstance] showCrossPromotionPageWithName:nil completion:nil];
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+                [[FloopSdkManager sharedInstance] showCrossPromotionPageWithName:nil completion:nil];
+        }
+    }];
 #endif
 }
 

@@ -78,7 +78,11 @@
 #ifdef FreeVersion
     [ABXAppStore openAppStoreReviewForApp:xmasAppID];
 #else
-    [ABXAppStore openAppStoreReviewForApp:xmasPaidAppID];
+    [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
+        if (success) {
+            [ABXAppStore openAppStoreReviewForApp:xmasPaidAppID];
+        }
+    }];
 #endif
     self.promptView.view.hidden = YES;
 }

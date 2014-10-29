@@ -9,6 +9,9 @@
 #import "AboutContainerViewController.h"
 #import <MessageUI/MessageUI.h>
 #import "XMasGoogleAnalitycs.h"
+#ifdef FreeVersion
+#import <FacebookSDK/FacebookSDK.h>
+#endif
 
 @interface AboutContainerViewController () <MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *readBookButton;
@@ -35,6 +38,7 @@
 
 - (void)goToReadBookParentGate {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
+    [FBAppEvents logEvent:@"Interested in Neoniks"];
     NSURL *bookAppUrl = [NSURL URLWithString:NeoniksBookLink];
     if ([[UIApplication sharedApplication] canOpenURL:bookAppUrl]) {
         [[UIApplication sharedApplication] openURL:bookAppUrl];

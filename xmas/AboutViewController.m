@@ -12,6 +12,9 @@
 #import "ABXPromptView.h"
 #import "NSString+ABXLocalized.h"
 #import "UIViewController+ABXScreenshot.h"
+#ifdef FreeVersion
+#import <FacebookSDK/FacebookSDK.h>
+#endif
 
 @interface AboutViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *contributorsText;
@@ -51,6 +54,7 @@
 
 - (void)openSite {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
+    [FBAppEvents logEvent:@"Interested in Neoniks"];
     NSURL *bookUrl = [NSURL urlForSite];
 #ifdef FreeVersion
     [[UIApplication sharedApplication] openURL:bookUrl];

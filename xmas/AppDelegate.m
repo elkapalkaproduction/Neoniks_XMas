@@ -70,7 +70,10 @@ NSString *const bookAppID = @"899196882";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+#ifdef FreeVersion
     [FBAppEvents activateApp];
+#endif
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

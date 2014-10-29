@@ -38,7 +38,7 @@
 
 - (void)goToReadBookParentGate {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
-    [FBAppEvents logEvent:@"Interested in Neoniks"];
+    
     NSURL *bookAppUrl = [NSURL URLWithString:NeoniksBookLink];
     if ([[UIApplication sharedApplication] canOpenURL:bookAppUrl]) {
         [[UIApplication sharedApplication] openURL:bookAppUrl];
@@ -51,6 +51,7 @@
 - (void)goToReadBook {
 #ifdef FreeVersion
     [self goToReadBookParentGate];
+    [FBAppEvents logEvent:@"Interested in Neoniks"];
 #else
     [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
         if (success) {

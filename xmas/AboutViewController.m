@@ -54,10 +54,10 @@
 
 - (void)openSite {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategoryAboutUs action:GAnalitycsWebsite label:[DeviceUtils deviceName] value:[LanguageUtils currentValue]];
-    [FBAppEvents logEvent:@"Interested in Neoniks"];
     NSURL *bookUrl = [NSURL urlForSite];
 #ifdef FreeVersion
     [[UIApplication sharedApplication] openURL:bookUrl];
+    [FBAppEvents logEvent:@"Interested in Neoniks"];
 #else
     [[FloopSdkManager sharedInstance] showParentalGate:^(BOOL success) {
         if (success) {

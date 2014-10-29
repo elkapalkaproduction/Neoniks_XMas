@@ -9,9 +9,6 @@
 #import "ABXPromptView.h"
 
 #import "NSString+ABXLocalized.h"
-#ifdef FreeVersion
-#import <FacebookSDK/FacebookSDK.h>
-#endif
 
 
 
@@ -47,7 +44,6 @@
 - (void)onLove {
     if (self.step2) {
         if (self.liked && self.delegate && [self.delegate respondsToSelector:@selector(appbotPromptForReview)]) {
-            [FBAppEvents logEvent:@"Loved the app"];
             [self.delegate appbotPromptForReview];
         } else if (!self.liked && self.delegate && [self.delegate respondsToSelector:@selector(appbotPromptForFeedback)]) {
             [self.delegate appbotPromptForFeedback];

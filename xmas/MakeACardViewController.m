@@ -11,6 +11,9 @@
 #import "MakeACardContainerViewController.h"
 #import <MessageUI/MessageUI.h>
 #import "XMasGoogleAnalitycs.h"
+#ifdef FreeVersion
+#import <FacebookSDK/FacebookSDK.h>
+#endif
 
 @interface MakeACardViewController () <MFMailComposeViewControllerDelegate, CaptionsDelegate, MakeACardDelegate>
 
@@ -76,6 +79,9 @@
 
 - (void)send {
     [[XMasGoogleAnalitycs sharedManager] logEventWithCategory:GAnalitycsCategorySnapshot action:GAnalitycsSnapshotSend label:[@(self.imageIndex) stringValue] value:[LanguageUtils currentValue]];
+    #ifdef FreeVersion
+    [FBAppEvents logEvent:@"Card Shared"];
+    #endif
     UIImage *image = [UIImage captureScreenInView:self.cardView];
     MFMailComposeViewController *mailCont = [self createMailFromImage:image];
     if (!mailCont) return;

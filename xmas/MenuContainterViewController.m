@@ -12,6 +12,7 @@
 #import "XMasGoogleAnalitycs.h"
 #ifdef FreeVersion
 #import "AdsManager.h"
+#import <FacebookSDK/FacebookSDK.h>
 #else
 #endif
 @interface MenuContainterViewController ()

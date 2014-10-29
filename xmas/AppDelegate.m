@@ -14,6 +14,7 @@
 
 #ifdef FreeVersion
 #import "AdsManager.h"
+#import <FacebookSDK/FacebookSDK.h>
 #endif
 
 NSString *const xmasAppID = @"928804072";
@@ -69,6 +70,7 @@ NSString *const bookAppID = @"899196882";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

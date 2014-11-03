@@ -17,7 +17,7 @@ NSString *const CHARTBOOST_APP_ID = @"54377f15c26ee43451b3fcf0";
 NSString *const CHARTBOOST_APP_SIGNATURE = @"5f8be4653b7088a82759825449103baff5ca8fe3";
 
 NSString *const START_APP_DEVELOPER_KEY = @"105068540";
-NSString *const START_APP_APP_KEY = @"210300540";
+NSString *const START_APP_APP_KEY = @"210828017";
 
 
 @interface AdsManager () <ChartboostDelegate, STADelegateProtocol>
